@@ -1,5 +1,5 @@
 ---
 templateKey: index-page
-title: ABCaaa
+title: Home
 content: ABC
 ---
