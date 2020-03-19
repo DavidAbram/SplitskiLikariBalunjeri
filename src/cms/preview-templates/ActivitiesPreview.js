@@ -10,6 +10,7 @@ const ActivitiesPreview = ({ entry, getAsset }) => {
       <ActivitiesTemplate
         content={data.content}
         title={data.title}
+        date={data.date}
       />
     )
   } else {
