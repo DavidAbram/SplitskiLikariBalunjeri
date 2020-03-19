@@ -10,7 +10,7 @@ const NotificationsPreview = ({ entry, getAsset }) => {
       <NotificationsTemplate
         content={data.content}
         title={data.title}
-        date={data.date}
+        date={data.date.toISOString()}
       />
     )
   } else {

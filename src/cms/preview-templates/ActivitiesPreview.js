@@ -4,13 +4,13 @@ import { ActivitiesTemplate } from '../../templates/activities';
 
 const ActivitiesPreview = ({ entry, getAsset }) => {
   const data = entry.getIn(['data']).toJS()
-
+  console.log(data);
   if (data) {
     return (
       <ActivitiesTemplate
         content={data.content}
         title={data.title}
-        date={data.date}
+        date={data.date.toISOString()}
       />
     )
   } else {
