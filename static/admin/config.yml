@@ -1,6 +1,5 @@
 backend:
-  name: github
-  repo: DavidAbram/SplitskiLikariBalunjeri
+  repo: test-repo
 media_folder: static/assets
 public_folder: /assets
 collections:
