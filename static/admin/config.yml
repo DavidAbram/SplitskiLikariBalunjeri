@@ -29,10 +29,17 @@ collections:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "members-page"}
           - {label: Title, name: title, widget: string}
           - {label: Content, name: content, widget: string}
-      - file: "src/pages/members/index.md"
+      - file: "src/pages/vision/index.md"
         label: "Vision Page"
         name: "vision"
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "vision-page"}
+          - {label: Title, name: title, widget: string}
+          - {label: Content, name: content, widget: string}
+      - file: "src/pages/about/index.md"
+        label: "About Page"
+        name: "about"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about-page"}
           - {label: Title, name: title, widget: string}
           - {label: Content, name: content, widget: string}
