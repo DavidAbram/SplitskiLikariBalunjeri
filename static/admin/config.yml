@@ -18,7 +18,17 @@ collections:
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "blog-post"}
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "notifications"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Content", name: "content", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+  - name: "activities"
+    label: "Activities"
+    folder: "src/pages/activities"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "activities"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Content", name: "content", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
