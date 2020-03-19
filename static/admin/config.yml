@@ -20,15 +20,19 @@ collections:
         name: "header"
         fields:
           - {label: "Config Type", name: "configType", widget: "hidden", default: "header"}
+          - {label: Logo, name: logo, widget: image}
           - {label: Title, name: title, widget: string}
           - {label: Subtitle, name: subtitle, widget: string}
+          - {label: Hero, name: hero, widget: image}
       - file: "src/config/footer/index.md"
         label: "Footer"
         name: "footer"
         fields:
           - {label: "Config Type", name: "configType", widget: "hidden", default: "footer"}
-          - {label: Title, name: title, widget: string}
-          - {label: Subtitle, name: subtitle, widget: string}
+          - {label: Name, name: name, widget: string}
+          - {label: Address, name: address, widget: string}
+          - {label: Data, name: data, widget: string}
+          - {label: Logo, name: logo, widget: image}
   - name: "notifications"
     label: "Notifications"
     folder: "src/pages/notifications"
