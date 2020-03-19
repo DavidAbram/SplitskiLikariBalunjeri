@@ -1,12 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
+import Test from '../components/Test';
 
 export const IndexPageTemplate = ({
   title,
   content,
 }) => (
   <div>
+    <Test />
     <h1>{title}</h1>
     <p>{content}</p>
   </div>

@@ -12,6 +12,23 @@ media_folder: static/img
 public_folder: /img
 
 collections:
+  - name: "config"
+    label: "Configuration"
+    files:
+      - file: "src/config/header/index.md"
+        label: "Header"
+        name: "header"
+        fields:
+          - {label: "Config Type", name: "configType", widget: "hidden", default: "header"}
+          - {label: Title, name: title, widget: string}
+          - {label: Subtitle, name: subtitle, widget: string}
+      - file: "src/config/footer/index.md"
+        label: "Footer"
+        name: "footer"
+        fields:
+          - {label: "Config Type", name: "configType", widget: "hidden", default: "footer"}
+          - {label: Title, name: title, widget: string}
+          - {label: Subtitle, name: subtitle, widget: string}
   - name: "notifications"
     label: "Notifications"
     folder: "src/pages/notifications"
