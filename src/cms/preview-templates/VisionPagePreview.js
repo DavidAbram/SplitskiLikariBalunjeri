@@ -2,13 +2,12 @@ import React from 'react'
 import PropTypes from 'prop-types';
 import { VisionPageTemplate } from '../../templates/vision-page';
 
-const VisionPagePreview = ({ entry, getAsset }) => {
-  const data = entry.getIn(['data']).toJS()
-
+const VisionPagePreview = ({ entry, widgetFor, getAsset }) => {
+  const data = entry.getIn(['data']).toJS();
   if (data) {
     return (
       <VisionPageTemplate
-        content={data.content}
+        content={widgetFor('body')}
         title={data.title}
       />
     )
@@ -21,6 +20,7 @@ VisionPagePreview.propTypes = {
   entry: PropTypes.shape({
     getIn: PropTypes.func,
   }),
+  widgetFor: PropTypes.func,
   getAsset: PropTypes.func,
 }
 

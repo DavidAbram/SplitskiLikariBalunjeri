@@ -2,15 +2,17 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout';
+import Content, { HTMLContent } from '../components/Content';
 
 export const VisionPageTemplate = ({
   title,
   content,
+  PageContent = Content,
 }) => (
-  <Layout>
+  <>
     <h1>{title}</h1>
-    <p>{content}</p>
-  </Layout>
+    <PageContent content={content} />
+  </>
 )
 
 VisionPageTemplate.propTypes = {
@@ -19,13 +21,15 @@ VisionPageTemplate.propTypes = {
 }
 
 const VisionPage = ({ data }) => {
-  const { frontmatter } = data.markdownRemark
-
+  const { frontmatter, html } = data.markdownRemark
   return (
+    <Layout>
       <VisionPageTemplate
         title={frontmatter.title}
-        content={frontmatter.content}
+        content={html}
+        PageContent={HTMLContent}
       />
+    </Layout>
   )
 }
 
@@ -42,9 +46,9 @@ export default VisionPage
 export const pageQuery = graphql`
   query VisionPageTemplate {
     markdownRemark(frontmatter: { templateKey: { eq: "vision-page" } }) {
+      html
       frontmatter {
         title
-        content
       }
     }
   }

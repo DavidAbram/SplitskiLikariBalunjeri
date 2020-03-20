@@ -3,12 +3,14 @@ import Head from '../Head';
 import Header from '../Header';
 import Footer from '../Footer';
 
-const Layout = ({ title, subtitle, logo, hero, heroHeight, children }) => {
+const Layout = ({ children }) => {
   return (
     <>
       <Head />
       <Header />
-      {children}
+      <section>
+        {children}
+      </section>
       <Footer />
     </>
   );
