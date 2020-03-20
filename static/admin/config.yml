@@ -2,11 +2,11 @@ backend:
   name: git-gateway
   branch: master
   commit_messages:
-    create: 'Create {{collection}} “{{slug}}”'
-    update: 'Update {{collection}} “{{slug}}”'
-    delete: 'Delete {{collection}} “{{slug}}”'
-    uploadMedia: '[skip ci] Upload “{{path}}”'
-    deleteMedia: '[skip ci] Delete “{{path}}”'
+    create: "Create {{collection}} “{{slug}}”"
+    update: "Update {{collection}} “{{slug}}”"
+    delete: "Delete {{collection}} “{{slug}}”"
+    uploadMedia: "[skip ci] Upload “{{path}}”"
+    deleteMedia: "[skip ci] Delete “{{path}}”"
 
 media_folder: static/img
 public_folder: /img
@@ -19,40 +19,60 @@ collections:
         label: "Header"
         name: "header"
         fields:
-          - {label: "Config Type", name: "configType", widget: "hidden", default: "header"}
-          - {label: Logo, name: logo, widget: image}
-          - {label: Title, name: title, widget: string}
-          - {label: Subtitle, name: subtitle, widget: string}
-          - {label: Hero, name: hero, widget: image}
+          - {
+              label: "Config Type",
+              name: "configType",
+              widget: "hidden",
+              default: "header",
+            }
+          - { label: Logo, name: logo, widget: image }
+          - { label: Title, name: title, widget: string }
+          - { label: Subtitle, name: subtitle, widget: string }
+          - { label: Hero, name: hero, widget: image }
       - file: "src/config/footer/index.md"
         label: "Footer"
         name: "footer"
         fields:
-          - {label: "Config Type", name: "configType", widget: "hidden", default: "footer"}
-          - {label: Name, name: name, widget: string}
-          - {label: Address, name: address, widget: string}
-          - {label: Data, name: data, widget: string}
-          - {label: Logo, name: logo, widget: image}
+          - {
+              label: "Config Type",
+              name: "configType",
+              widget: "hidden",
+              default: "footer",
+            }
+          - { label: Name, name: name, widget: string }
+          - { label: Address, name: address, widget: string }
+          - { label: Data, name: data, widget: string }
+          - { label: Logo, name: logo, widget: image }
   - name: "notifications"
     label: "Notifications"
     folder: "src/pages/obavijesti"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "notifications"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "notifications",
+        }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
   - name: "activities"
     label: "Activities"
     folder: "src/pages/aktivnosti"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "activities"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "activities",
+        }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
   - name: "pages"
     label: "Pages"
     files:
@@ -60,27 +80,61 @@ collections:
         label: "Landing Page"
         name: "index"
         fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "index-page"}
-          - {label: Title, name: title, widget: string}
-          - {label: "Body", name: "body", widget: "markdown"}
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "index-page",
+            }
+          - { label: Title, name: title, widget: string }
+          - { label: "Body", name: "body", widget: "markdown" }
       - file: "src/pages/clanstvo/index.md"
         label: "Members Page"
         name: "members"
         fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "members-page"}
-          - {label: Title, name: title, widget: string}
-          - {label: "Body", name: "body", widget: "markdown"}
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "members-page",
+            }
+          - { label: Title, name: title, widget: string }
+          - { label: "Body", name: "body", widget: "markdown" }
       - file: "src/pages/misija-i-vizija/index.md"
         label: "Vision Page"
         name: "vision"
         fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "vision-page"}
-          - {label: Title, name: title, widget: string}
-          - {label: "Body", name: "body", widget: "markdown"}
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "vision-page",
+            }
+          - { label: Title, name: title, widget: string }
+          - { label: "Body", name: "body", widget: "markdown" }
+          - {
+              label: "Vision Image",
+              name: vision-image,
+              widget: object,
+              fields:
+                [
+                  { label: Image, name: image, widget: image },
+                  {
+                    label: "Image description",
+                    name: description,
+                    widget: string,
+                  },
+                ],
+            }
       - file: "src/pages/o-udruzi/index.md"
         label: "About Page"
         name: "about"
         fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about-page"}
-          - {label: Title, name: title, widget: string}
-          - {label: "Body", name: "body", widget: "markdown"}
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "about-page",
+            }
+          - { label: Title, name: title, widget: string }
+          - { label: "Body", name: "body", widget: "markdown" }
