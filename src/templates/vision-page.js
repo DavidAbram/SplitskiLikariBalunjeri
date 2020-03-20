@@ -11,7 +11,7 @@ export const VisionPageTemplate = ({
 }) => (
   <>
     <h1>{title}</h1>
-    <PageContent content={content} />
+    <PageContent>{content}</PageContent>
   </>
 )
 
@@ -36,6 +36,7 @@ const VisionPage = ({ data }) => {
 VisionPage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
+      html: PropTypes.string,
       frontmatter: PropTypes.object,
     }),
   }),

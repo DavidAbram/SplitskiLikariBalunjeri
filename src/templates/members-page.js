@@ -2,15 +2,17 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout';
+import Content, { HTMLContent } from '../components/Content';
 
 export const MembersPageTemplate = ({
   title,
   content,
+  PageContent = Content,
 }) => (
-  <Layout>
+  <>
     <h1>{title}</h1>
-    <p>{content}</p>
-  </Layout>
+    <PageContent>{content}</PageContent>
+  </>
 )
 
 MembersPageTemplate.propTypes = {
@@ -19,19 +21,23 @@ MembersPageTemplate.propTypes = {
 }
 
 const MembersPage = ({ data }) => {
-  const { frontmatter } = data.markdownRemark
+  const { frontmatter, html } = data.markdownRemark
 
   return (
+    <Layout>
       <MembersPageTemplate
         title={frontmatter.title}
-        content={frontmatter.content}
+        content={html}
+        PageContent={HTMLContent}
       />
+    </Layout>
   )
 }
 
 MembersPage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
+      html: PropTypes.string,
       frontmatter: PropTypes.object,
     }),
   }),
@@ -42,9 +48,9 @@ export default MembersPage
 export const pageQuery = graphql`
   query MembersPageTemplate {
     markdownRemark(frontmatter: { templateKey: { eq: "members-page" } }) {
+      html
       frontmatter {
         title
-        content
       }
     }
   }

@@ -2,15 +2,17 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout';
+import Content, { HTMLContent } from '../components/Content';
 
 export const IndexPageTemplate = ({
   title,
   content,
+  PageContent = Content,
 }) => (
-  <Layout>
+  <>
     <h1>{title}</h1>
-    <p>{content}</p>
-  </Layout>
+    <PageContent>{content}</PageContent>
+  </>
 )
 
 IndexPageTemplate.propTypes = {
@@ -19,19 +21,23 @@ IndexPageTemplate.propTypes = {
 }
 
 const IndexPage = ({ data }) => {
-  const { frontmatter } = data.markdownRemark
-
+  const { frontmatter, html } = data.markdownRemark;
+  console.log(html);
   return (
+    <Layout>
       <IndexPageTemplate
         title={frontmatter.title}
-        content={frontmatter.content}
+        content={html}
+        PageContent={HTMLContent}
       />
+    </Layout>
   )
 }
 
 IndexPage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
+      html: PropTypes.string,
       frontmatter: PropTypes.object,
     }),
   }),
@@ -42,9 +48,9 @@ export default IndexPage
 export const pageQuery = graphql`
   query IndexPageTemplate {
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
+      html
       frontmatter {
         title
-        content
       }
     }
   }

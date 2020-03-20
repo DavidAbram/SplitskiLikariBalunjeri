@@ -41,7 +41,7 @@ collections:
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "notifications"}
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Content", name: "content", widget: "string"}
+      - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
   - name: "activities"
     label: "Activities"
@@ -51,7 +51,7 @@ collections:
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "activities"}
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Content", name: "content", widget: "string"}
+      - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
   - name: "pages"
     label: "Pages"
@@ -62,14 +62,14 @@ collections:
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "index-page"}
           - {label: Title, name: title, widget: string}
-          - {label: Content, name: content, widget: string}
+          - {label: "Body", name: "body", widget: "markdown"}
       - file: "src/pages/members/index.md"
         label: "Members Page"
         name: "members"
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "members-page"}
           - {label: Title, name: title, widget: string}
-          - {label: Content, name: content, widget: string}
+          - {label: "Body", name: "body", widget: "markdown"}
       - file: "src/pages/vision/index.md"
         label: "Vision Page"
         name: "vision"
@@ -83,4 +83,4 @@ collections:
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about-page"}
           - {label: Title, name: title, widget: string}
-          - {label: Content, name: content, widget: markdown}
+          - {label: "Body", name: "body", widget: "markdown"}

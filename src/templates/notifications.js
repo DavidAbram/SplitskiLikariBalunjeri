@@ -2,17 +2,19 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout';
+import Content, { HTMLContent } from '../components/Content';
 
 export const NotificationsTemplate = ({
   title,
   content,
   date,
+  PageContent = Content,
 }) => (
-  <Layout>
+  <>
     <h1>{title}</h1>
-    <p>{content}</p>
-    <p>{date}</p>
-  </Layout>
+    <PageContent>{content}</PageContent>
+    <span>{date}</span>
+  </>
 )
 
 NotificationsTemplate.propTypes = {
@@ -22,20 +24,24 @@ NotificationsTemplate.propTypes = {
 }
 
 const Notifications = ({ data }) => {
-  const { frontmatter } = data.markdownRemark
+  const { frontmatter, html } = data.markdownRemark
 
   return (
+    <Layout>
       <NotificationsTemplate
         title={frontmatter.title}
-        content={frontmatter.content}
+        content={html}
         date={frontmatter.date}
+        PageContent={HTMLContent}
       />
+    </Layout>
   )
 }
 
 Notifications.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
+      html: PropTypes.string,
       frontmatter: PropTypes.object,
     }),
   }),
@@ -46,9 +52,9 @@ export default Notifications
 export const pageQuery = graphql`
   query NotificationsTemplate {
     markdownRemark(frontmatter: { templateKey: { eq: "notifications" } }) {
+      html
       frontmatter {
         title
-        content
         date
       }
     }

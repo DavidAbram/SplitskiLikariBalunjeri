@@ -2,17 +2,19 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout';
+import Content, { HTMLContent } from '../components/Content';
 
 export const ActivitiesTemplate = ({
   title,
   content,
   date,
+  PageContent = Content,
 }) => (
-  <Layout>
+  <>
     <h1>{title}</h1>
-    <p>{content}</p>
-    <p>{date}</p>
-  </Layout>
+    <PageContent>{content}</PageContent>
+    <span>{date}</span>
+  </>
 )
 
 ActivitiesTemplate.propTypes = {
@@ -25,17 +27,21 @@ const Activities = ({ data }) => {
   const { frontmatter } = data.markdownRemark
 
   return (
+    <Layout>
       <ActivitiesTemplate
         title={frontmatter.title}
         content={frontmatter.content}
         date={frontmatter.date}
+        PageContent={HTMLContent}
       />
+    </Layout>
   )
 }
 
 Activities.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
+      html: PropTypes.string,
       frontmatter: PropTypes.object,
     }),
   }),
