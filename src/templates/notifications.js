@@ -1,17 +1,18 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
+import Layout from '../components/Layout';
 
 export const NotificationsTemplate = ({
   title,
   content,
   date,
 }) => (
-  <div>
+  <Layout>
     <h1>{title}</h1>
     <p>{content}</p>
     <p>{date}</p>
-  </div>
+  </Layout>
 )
 
 NotificationsTemplate.propTypes = {

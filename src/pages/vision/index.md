@@ -1,5 +1,4 @@
 ---
 templateKey: vision-page
-title: Vision
-content: ABC
+title: Misija i vizija
 ---
