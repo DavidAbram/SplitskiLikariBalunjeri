@@ -1,7 +1,7 @@
 ---
 configType: header
-logo: /logo200.png
+logo: /img/logo200.png
 title: Splitski likari Balunjeri
 subtitle: Naprid bili
-hero: /hero.png
+hero: /img/hero.png
 ---

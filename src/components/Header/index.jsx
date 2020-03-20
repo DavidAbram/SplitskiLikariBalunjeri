@@ -1,20 +1,20 @@
 import React from 'react';
 import { graphql, StaticQuery } from 'gatsby'
-import Img from 'gatsby-image'
+import PreviewCompatibleImage from '../PreviewCompatibleImage'
 
-const Header = ({ data }) => {
-  const { title, subtitle, logo, hero } = data.markdownRemark.frontmatter;
+export const Header = ({ title, subtitle, logo, hero, heroHeight }) => {
+  console.log(logo, hero, heroHeight);
   return (
     <div>
       <div style={{ height: '200px', width: '200px'}}>
-        <Img fluid={logo.childImageSharp.fluid} alt={'logo'} />
+        <PreviewCompatibleImage src={logo} alt={'logo'} />
       </div>
       <div>{title}</div>
       <div>{subtitle}</div>
       <div style={{
         width: '100%',
-        height: `${hero.childImageSharp.original.height}px`,
-        backgroundImage: `url(${hero.childImageSharp.original.src})`,
+        height: `${heroHeight || 300}px`,
+        backgroundImage: `url(${hero})`,
       }} />
     </div>
   );
@@ -47,6 +47,12 @@ export default () => (
       }
     }
     `}
-    render={(data) => <Header data={data} />}
+    render={(data) => <Header 
+        title={data.markdownRemark.frontmatter.title}
+        subtitle={data.markdownRemark.frontmatter.subtitle}
+        logo={data.markdownRemark.frontmatter.logo}
+        hero={data.markdownRemark.frontmatter.hero.childImageSharp.original.src}
+        heroHeight={data.markdownRemark.frontmatter.hero.childImageSharp.original.height}
+      />}
   />
 )
