@@ -3,7 +3,6 @@ import { graphql, StaticQuery } from 'gatsby'
 import PreviewCompatibleImage from '../PreviewCompatibleImage'
 
 export const Header = ({ title, subtitle, logo, hero, heroHeight }) => {
-  console.log(logo, hero, heroHeight);
   return (
     <div>
       <div style={{ height: '200px', width: '200px'}}>

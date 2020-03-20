@@ -3,8 +3,7 @@ import PropTypes from 'prop-types';
 import { ActivitiesTemplate } from '../../templates/activities';
 
 const ActivitiesPreview = ({ entry, getAsset }) => {
-  const data = entry.getIn(['data']).toJS()
-  console.log(data);
+  const data = entry.getIn(['data']).toJS();
   if (data) {
     return (
       <ActivitiesTemplate
