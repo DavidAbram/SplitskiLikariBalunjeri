@@ -11,8 +11,8 @@ export const Header = ({ title, subtitle, logo, hero, heroHeight }) => {
           <PreviewCompatibleImage src={logo} alt={'logo'} />
         </div>
       </Link>
-      <div>{title}</div>
-      <div>{subtitle}</div>
+      <h1>{title}</h1>
+      <h6>{subtitle}</h6>
       <div style={{
         width: '100%',
         height: `${heroHeight || 300}px`,
