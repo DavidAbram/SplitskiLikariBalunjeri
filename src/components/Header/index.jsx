@@ -1,13 +1,16 @@
 import React from 'react';
-import { graphql, StaticQuery } from 'gatsby'
+import { graphql, StaticQuery, Link } from 'gatsby'
 import PreviewCompatibleImage from '../PreviewCompatibleImage'
+import Navigation from '../Navigation';
 
 export const Header = ({ title, subtitle, logo, hero, heroHeight }) => {
   return (
     <section>
-      <div style={{ height: '200px', width: '200px'}}>
-        <PreviewCompatibleImage src={logo} alt={'logo'} />
-      </div>
+      <Link to="/">
+        <div style={{ height: '200px', width: '200px'}}>
+          <PreviewCompatibleImage src={logo} alt={'logo'} />
+        </div>
+      </Link>
       <div>{title}</div>
       <div>{subtitle}</div>
       <div style={{
@@ -15,6 +18,7 @@ export const Header = ({ title, subtitle, logo, hero, heroHeight }) => {
         height: `${heroHeight || 300}px`,
         backgroundImage: `url(${hero})`,
       }} />
+      <Navigation />
     </section>
   );
 };
