@@ -4,14 +4,14 @@ import PreviewCompatibleImage from '../PreviewCompatibleImage';
 
 export const Footer = ({ name, address, logo, additionalData }) => {
   return (
-    <div>
+    <section>
       <div style={{ height: '150px', width: '150px'}}>
         <PreviewCompatibleImage src={logo} alt={'logo'} />
       </div>
       <div>{name}</div>
       <div>{address}</div>
       <div>{additionalData}</div>
-    </div>
+    </section>
   );
 };
 

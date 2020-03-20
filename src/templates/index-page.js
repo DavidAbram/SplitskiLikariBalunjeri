@@ -3,17 +3,18 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import Layout from '../components/Layout';
 
 export const IndexPageTemplate = ({
   title,
   content,
 }) => (
-  <div>
+  <Layout>
     <Header />
     <h1>{title}</h1>
     <p>{content}</p>
     <Footer />
-  </div>
+  </Layout>
 )
 
 IndexPageTemplate.propTypes = {

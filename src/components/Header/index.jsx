@@ -4,7 +4,7 @@ import PreviewCompatibleImage from '../PreviewCompatibleImage'
 
 export const Header = ({ title, subtitle, logo, hero, heroHeight }) => {
   return (
-    <div>
+    <section>
       <div style={{ height: '200px', width: '200px'}}>
         <PreviewCompatibleImage src={logo} alt={'logo'} />
       </div>
@@ -15,7 +15,7 @@ export const Header = ({ title, subtitle, logo, hero, heroHeight }) => {
         height: `${heroHeight || 300}px`,
         backgroundImage: `url(${hero})`,
       }} />
-    </div>
+    </section>
   );
 };
 

@@ -36,12 +36,15 @@
   "scripts": {
     "clean": "gatsby clean",
     "start": "yarn develop",
-    "build": "yarn clean && gatsby build",
+    "build": "yarn clean && yarn build:dir && yarn build:favicons && gatsby build",
+    "build:dir": "mkdirp ./public/icons/",
+    "build:favicons": "node scripts/favicons",
     "develop": "yarn clean && gatsby develop",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"{gatsby-*.js,src/**/*.js}\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
+    "favicons": "^6.0.0",
     "prettier": "^1.15.3"
   }
 }
