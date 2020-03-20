@@ -1,13 +1,12 @@
 import React from 'react';
-import { graphql, StaticQuery } from 'gatsby'
-import Img from 'gatsby-image'
+import { graphql, StaticQuery } from 'gatsby';
+import PreviewCompatibleImage from '../PreviewCompatibleImage';
 
-const Footer = ({ data }) => {
-  const { name, address, logo, additionalData } = data.markdownRemark.frontmatter;
+export const Footer = ({ name, address, logo, additionalData }) => {
   return (
     <div>
       <div style={{ height: '150px', width: '150px'}}>
-        <Img fluid={logo.childImageSharp.fluid} alt={'logo'} />
+        <PreviewCompatibleImage src={logo} alt={'logo'} />
       </div>
       <div>{name}</div>
       <div>{address}</div>
@@ -36,6 +35,11 @@ export default () => (
       }
     }
     `}
-    render={(data) => <Footer data={data} />}
+    render={(data) => <Footer 
+      name={data.markdownRemark.frontmatter.name}
+      address={data.markdownRemark.frontmatter.address}
+      logo={data.markdownRemark.frontmatter.logo}
+      additionalData={data.markdownRemark.frontmatter.additionalData}
+    />}
   />
 )
