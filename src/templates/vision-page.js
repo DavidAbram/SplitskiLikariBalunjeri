@@ -30,7 +30,7 @@ const VisionPage = ({ data }) => {
     <Layout>
       <VisionPageTemplate
         title={frontmatter.title}
-        image={{ src: frontmatter.vision_image.image, alt: frontmatter.vision_image.description }}
+        image={{ src: frontmatter.image.src, alt: frontmatter.image.alt }}
         content={html}
         PageContent={HTMLContent}
       />
@@ -55,9 +55,9 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
-        vision_image {
-          description
-          image {
+        image {
+          alt
+          src {
             childImageSharp {
               fluid(maxWidth: 1024, quality: 100) {
                 ...GatsbyImageSharpFluid

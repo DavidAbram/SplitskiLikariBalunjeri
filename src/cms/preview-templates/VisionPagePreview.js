@@ -10,7 +10,7 @@ const VisionPagePreview = ({ entry, widgetFor, getAsset }) => {
       <VisionPageTemplate
         content={widgetFor('body')}
         title={data.title}
-        image={{ src: data["vision-image"].image, alt: data["vision-image"].description }}
+        image={{ src: data.image.src, alt: data.image.alt }}
       />
     )
   } else {

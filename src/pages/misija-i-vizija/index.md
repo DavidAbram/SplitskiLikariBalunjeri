@@ -1,9 +1,6 @@
 ---
 templateKey: vision-page
 title: Misija i vizija
-vision-image:
-  image: /img/about.jpg
-  description: Svi članovi Splitskih likara balunjera
 image:
   src: /img/about.jpg
   alt: Svi članovi udruge
