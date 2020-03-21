@@ -5,9 +5,7 @@ import PreviewCompatibleImage from '../PreviewCompatibleImage';
 export const Footer = ({ name, address, logo, additionalData }) => {
   return (
     <section>
-      <div style={{ height: '150px', width: '150px'}}>
-        <PreviewCompatibleImage src={logo} alt={'logo'} />
-      </div>
+      <PreviewCompatibleImage height="150px" width="150px" src={logo} alt={'logo'} />
       <div>{name}</div>
       <div>{address}</div>
       <div>{additionalData}</div>

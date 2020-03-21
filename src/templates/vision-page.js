@@ -4,15 +4,18 @@ import { graphql } from 'gatsby'
 import Layout from '../components/Layout';
 import Title from '../components/Title';
 import Content, { HTMLContent } from '../components/Content';
+import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 
 export const VisionPageTemplate = ({
   title,
   content,
+  image,
   PageContent = Content,
 }) => (
   <>
     <Title>{title}</Title>
     <PageContent>{content}</PageContent>
+    <PreviewCompatibleImage width='70%' height='35%' {...image} />
   </>
 )
 
@@ -27,6 +30,7 @@ const VisionPage = ({ data }) => {
     <Layout>
       <VisionPageTemplate
         title={frontmatter.title}
+        image={{ src: frontmatter.vision_image.image, alt: frontmatter.vision_image.description }}
         content={html}
         PageContent={HTMLContent}
       />
@@ -51,6 +55,16 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
+        vision_image {
+          description
+          image {
+            childImageSharp {
+              fluid(maxWidth: 1024, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
       }
     }
   }

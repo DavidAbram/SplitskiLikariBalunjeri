@@ -2,16 +2,39 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Img from 'gatsby-image'
 
-const PreviewCompatibleImage = ({ src, alt }) => {
+const PreviewCompatibleImage = ({ src, alt, height, width, maxHeight, maxWidth }) => {
+
+  const wrapStyle = {
+    width: `${width}`,
+    height: `${height}`,
+    maxHeight: `${maxHeight}`,
+    maxWidth: `${maxWidth}`,
+    position: 'relative',
+    display: 'inline-block',
+    overflow: 'hidden',
+    margin: 0,
+  };
+
+  const imageStyle = {
+    width: '100%',
+    height: '100%',
+    objectFit: 'cover',
+  }
 
   if (src.childImageSharp && src.childImageSharp.fluid) {
     return (
-      <Img fluid={src.childImageSharp.fluid} alt={alt} />
+      <div style={wrapStyle}>
+        <Img fluid={src.childImageSharp.fluid} alt={alt} />
+      </div>
     );
   }
 
   if (src && typeof src === 'string')
-    return <img src={src} alt={alt} />;
+    return (
+      <div style={wrapStyle}>
+        <img style={imageStyle} src={src} alt={alt} />
+      </div>
+    )
 
   return null;
 }

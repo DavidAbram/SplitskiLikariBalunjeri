@@ -114,14 +114,14 @@ collections:
           - { label: "Body", name: "body", widget: "markdown" }
           - {
               label: "Vision Image",
-              name: vision-image,
+              name: image,
               widget: object,
               fields:
                 [
-                  { label: Image, name: image, widget: image },
+                  { label: Image, name: src, widget: image },
                   {
                     label: "Image description",
-                    name: description,
+                    name: alt,
                     widget: string,
                   },
                 ],
