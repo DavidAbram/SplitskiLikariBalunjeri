@@ -4,6 +4,9 @@ title: Misija i vizija
 vision-image:
   image: /img/about.jpg
   description: Svi članovi Splitskih likara balunjera
+image:
+  src: /img/about.jpg
+  alt: Svi članovi udruge
 ---
 Područje djelovanja **Udruge** je nogometni sport, sportska rekreacija,
 socijalna djelatnost, demokratska kultura, kultura dijaloga, razmjena znanja i
