@@ -4,7 +4,6 @@ import { VisionPageTemplate } from '../../templates/vision-page';
 
 const VisionPagePreview = ({ entry, widgetFor, getAsset }) => {
   const data = entry.getIn(['data']).toJS();
-  console.log(data);
   if (data) {
     return (
       <VisionPageTemplate
