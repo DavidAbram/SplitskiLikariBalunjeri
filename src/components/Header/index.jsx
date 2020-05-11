@@ -7,7 +7,7 @@ export const Header = ({ title, subtitle, logo, hero, heroHeight }) => {
   return (
     <section>
       <Link to="/">
-        <PreviewCompatibleImage height={200} width={200} src={logo} alt={'logo'} />
+        <PreviewCompatibleImage height="200px" width="200px" src={logo} alt={'logo'} />
       </Link>
       <h1>{title}</h1>
       <h6>{subtitle}</h6>
