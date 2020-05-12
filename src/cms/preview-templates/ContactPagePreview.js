@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { ContactPageTemplate } from '../../templates/contact-page'
 
-const ContactPagePreview = ({ entry, getAsset }) => {
+const ContactPagePreview = ({ entry, widgetFor, getAsset }) => {
   const data = entry.getIn(['data']).toJS()
 
   if (data) {
