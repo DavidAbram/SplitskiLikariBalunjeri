@@ -8,7 +8,7 @@ const ContactPagePreview = ({ entry, getAsset }) => {
   if (data) {
     return (
       <ContactPageTemplate
-        content={data.content}
+        content={widgetFor('body')}
         title={data.title}
       />
     )
