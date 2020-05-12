@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout';
 import Content, { HTMLContent } from '../components/Content';
+import { Notification } from '../components/Notifications';
 
 export const NotificationsTemplate = ({
   title,
@@ -10,11 +11,7 @@ export const NotificationsTemplate = ({
   date,
   PageContent = Content,
 }) => (
-  <>
-    <h1>{title}</h1>
-    <PageContent>{content}</PageContent>
-    <span>{date}</span>
-  </>
+  <Notification title={title} content={content} date={date} PageContent={PageContent} />
 )
 
 NotificationsTemplate.propTypes = {
