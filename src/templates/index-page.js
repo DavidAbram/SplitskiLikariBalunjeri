@@ -4,6 +4,8 @@ import { graphql } from 'gatsby'
 import Layout from '../components/Layout';
 import Title from '../components/Title';
 import Content, { HTMLContent } from '../components/Content';
+import Notifications from '../components/Notifications';
+import Activities from '../components/Activities';
 
 export const IndexPageTemplate = ({
   title,
@@ -13,6 +15,8 @@ export const IndexPageTemplate = ({
   <>
     <Title>{title}</Title>
     <PageContent>{content}</PageContent>
+    <Notifications />
+    <Activities />
   </>
 )
 
@@ -51,6 +55,7 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
+        date
       }
     }
   }
