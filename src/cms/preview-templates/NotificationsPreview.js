@@ -2,13 +2,13 @@ import React from 'react'
 import PropTypes from 'prop-types';
 import { NotificationsTemplate } from '../../templates/notifications';
 
-const NotificationsPreview = ({ entry, getAsset }) => {
+const NotificationsPreview = ({ entry, widgetFor, getAsset }) => {
   const data = entry.getIn(['data']).toJS()
 
   if (data) {
     return (
       <NotificationsTemplate
-        content={data.content}
+        content={widgetFor('body')}
         title={data.title}
         date={data.date.toISOString()}
       />

@@ -2,12 +2,12 @@ import React from 'react'
 import PropTypes from 'prop-types';
 import { ActivitiesTemplate } from '../../templates/activities';
 
-const ActivitiesPreview = ({ entry, getAsset }) => {
+const ActivitiesPreview = ({ entry, widgetFor, getAsset }) => {
   const data = entry.getIn(['data']).toJS();
   if (data) {
     return (
       <ActivitiesTemplate
-        content={data.content}
+        content={widgetFor('body')}
         title={data.title}
         date={data.date.toISOString()}
       />

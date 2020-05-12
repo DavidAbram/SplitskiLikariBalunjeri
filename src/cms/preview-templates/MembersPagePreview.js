@@ -2,13 +2,13 @@ import React from 'react'
 import PropTypes from 'prop-types';
 import { MembersPageTemplate } from '../../templates/members-page';
 
-const MembersPagePreview = ({ entry, getAsset }) => {
+const MembersPagePreview = ({ entry, widgetFor, getAsset }) => {
   const data = entry.getIn(['data']).toJS()
 
   if (data) {
     return (
       <MembersPageTemplate
-        content={data.content}
+        content={widgetFor('body')}
         title={data.title}
       />
     )
