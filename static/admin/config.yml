@@ -47,7 +47,7 @@ collections:
     label: "Notifications"
     folder: "src/pages/obavijesti"
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    slug: "{{slug}}-{{day}}-{{month}}-{{year}}"
     fields:
       - {
           label: "Template Key",
@@ -62,7 +62,7 @@ collections:
     label: "Activities"
     folder: "src/pages/aktivnosti"
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    slug: "{{slug}}-{{day}}-{{month}}-{{year}}"
     fields:
       - {
           label: "Template Key",
