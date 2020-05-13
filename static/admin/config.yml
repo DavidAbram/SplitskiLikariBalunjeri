@@ -13,7 +13,7 @@ public_folder: /img
 
 collections:
   - name: "image-gallery"
-    label: "Image Gallery"
+    label: "Image"
     folder: "src/galleries/images"
     create: true
     slug: "{{slug}}-{{day}}-{{month}}-{{year}}"
@@ -26,6 +26,35 @@ collections:
       }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
+      - {
+        label: "Image",
+        name: image, 
+        widget: object,
+        fields:
+          [
+            { label: Image, name: src, widget: image },
+            {
+              label: "Image description",
+              name: alt,
+              widget: string
+            }
+          ]
+      }
+  - name: "Members"
+    label: "Member"
+    folder: "src/galleries/members"
+    create: true
+    slug: "{{slug}}-{{day}}-{{month}}-{{year}}"
+    fields:
+      - {
+        label: "Template Key",
+        name: "templateKey",
+        widget: "hidden",
+        default: "members"
+      }
+      - { label: "Full name", name: "fullName", widget: "string" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Position", name: "position", widget: "string" }
       - {
         label: "Image",
         name: image, 
