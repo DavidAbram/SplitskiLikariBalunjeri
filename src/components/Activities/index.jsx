@@ -32,7 +32,7 @@ const ActivitiesWithQuery = () => (
   <StaticQuery
     query={graphql`
       query {
-        allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "activities"}}}, limit: 1) {
+        allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "activity"}}}, limit: 1) {
           nodes {
             html
             frontmatter {

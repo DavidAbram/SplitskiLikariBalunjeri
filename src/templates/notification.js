@@ -9,9 +9,16 @@ export const NotificationsTemplate = ({
   title,
   content,
   date,
+  url,
   PageContent = Content,
 }) => (
-  <Notification title={title} content={content} date={date} PageContent={PageContent} />
+  <Notification
+    url={url}
+    title={title}
+    content={content}
+    date={date}
+    PageContent={PageContent} 
+  />
 )
 
 NotificationsTemplate.propTypes = {
@@ -21,7 +28,7 @@ NotificationsTemplate.propTypes = {
 }
 
 const Notifications = ({ data }) => {
-  const { frontmatter, html } = data.markdownRemark
+  const { frontmatter, html, fields } = data.markdownRemark
 
   return (
     <Layout>
@@ -30,6 +37,7 @@ const Notifications = ({ data }) => {
         content={html}
         date={frontmatter.date}
         PageContent={HTMLContent}
+        url={fields.url}
       />
     </Layout>
   )
@@ -40,6 +48,7 @@ Notifications.propTypes = {
     markdownRemark: PropTypes.shape({
       html: PropTypes.string,
       frontmatter: PropTypes.object,
+      fields: PropTypes.object,
     }),
   }),
 }
@@ -48,11 +57,14 @@ export default Notifications
 
 export const pageQuery = graphql`
   query NotificationsTemplate {
-    markdownRemark(frontmatter: { templateKey: { eq: "notifications" } }) {
+    markdownRemark(frontmatter: { templateKey: { eq: "notification" } }) {
       html
       frontmatter {
         title
         date
+      }
+      fields {
+        slug
       }
     }
   }

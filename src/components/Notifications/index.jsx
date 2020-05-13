@@ -32,7 +32,7 @@ const NotificationsWithQuery = () => (
   <StaticQuery
     query={graphql`
       query {
-        allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "notifications"}}}, limit: 3) {
+        allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "notification"}}}, limit: 3) {
           nodes {
             html
             frontmatter {
