@@ -54,7 +54,17 @@ collections:
       }
       - { label: "Full name", name: "fullName", widget: "string" }
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Position", name: "position", widget: "string" }
+      - { 
+          label: "Position",
+          name: "position",
+          widget: "select",
+          options:
+            [
+              { label: "Predsjednik Udruge", value: 0 },
+              { label: "Tajnik Udruge", value: 10 },
+              { label: "Članovi Upravnog Odbora", value: 20 }
+            ]
+        }
       - {
         label: "Image",
         name: image, 
@@ -101,7 +111,7 @@ collections:
           - { label: Data, name: data, widget: string }
           - { label: Logo, name: logo, widget: image }
   - name: "notifications"
-    label: "Notifications"
+    label: "Notification"
     folder: "src/pages/obavijesti"
     create: true
     slug: "{{slug}}-{{day}}-{{month}}-{{year}}"
@@ -116,7 +126,7 @@ collections:
       - { label: "Body", name: "body", widget: "markdown" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
   - name: "activities"
-    label: "Activities"
+    label: "Activity"
     folder: "src/pages/aktivnosti"
     create: true
     slug: "{{slug}}-{{day}}-{{month}}-{{year}}"
