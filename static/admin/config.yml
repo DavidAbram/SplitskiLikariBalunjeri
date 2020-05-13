@@ -12,6 +12,66 @@ media_folder: static/img
 public_folder: /img
 
 collections:
+  - name: "gallery"
+    label: "Gallery"
+    files:
+      - name: "image-gallery"
+        label: "Image Gallery"
+        folder: "src/galleries/main"
+        create: true
+        slug: "{{slug}}-{{day}}-{{month}}-{{year}}"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "image-gallery",
+            }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Publish Date", name: "date", widget: "datetime" }
+          - {
+              label: "Image",
+              name: image,
+              widget: object,
+              fields:
+                [
+                  { label: Image, name: src, widget: image },
+                  {
+                    label: "Image description",
+                    name: alt,
+                    widget: string,
+                  },
+                ],
+            }
+      - name: "members-gallery"
+        label: "Members Gallery"
+        folder: "src/galleries/members"
+        create: true
+        slug: "{{slug}}-{{day}}-{{month}}-{{year}}"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "members-gallery",
+            }
+          - { label: "Full Name", name: "full-name", widget: "string" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Position", name: "position", widget: "string" }
+          - {
+              label: "Image",
+              name: image,
+              widget: object,
+              fields:
+                [
+                  { label: Image, name: src, widget: image },
+                  {
+                    label: "Image description",
+                    name: alt,
+                    widget: string,
+                  },
+                ],
+            }
   - name: "config"
     label: "Configuration"
     files:
