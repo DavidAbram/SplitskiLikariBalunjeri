@@ -1,5 +1,3 @@
 ---
 templateKey: index-page
-title: Home
 ---
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac enim massa. Nullam et efficitur lectus. Pellentesque at gravida orci, sed convallis libero. Cras tellus ipsum, tempus vitae mattis id, porta eu massa. Nam sed leo vel ligula convallis maximus. Aliquam dignissim, ipsum a maximus scelerisque, libero velit sollicitudin ipsum, et euismod leo tortor eget dui. Maecenas turpis justo, commodo vitae aliquet in, fringilla vel diam. Nullam elit tortor, consequat vel maximus nec, interdum vel ligula. Suspendisse ultricies ex non libero convallis interdum. Sed nunc ex, feugiat eget ipsum at, faucibus euismod ligula. Integer blandit, dolor eu ornare vestibulum, ante sapien tincidunt risus, vitae lacinia augue massa in orci. Nunc rutrum neque aliquam massa suscipit, non dapibus dolor maximus. Maecenas molestie sem dolor, vel convallis ex dapibus at. Donec sed sodales metus, vitae lobortis velit. Quisque lectus nisl, tincidunt porttitor facilisis sed, maximus eu ipsum.

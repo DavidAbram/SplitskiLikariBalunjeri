@@ -86,8 +86,6 @@ collections:
               widget: "hidden",
               default: "index-page",
             }
-          - { label: Title, name: title, widget: string }
-          - { label: "Body", name: "body", widget: "markdown" }
       - file: "src/pages/kontakt/index.md"
         label: "Contact Page"
         name: "contact"
