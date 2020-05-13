@@ -60,7 +60,7 @@ collections:
           widget: "select",
           options:
             [
-              { label: "Predsjednik Udruge", value: 0 },
+              { label: "Predsjednik Udruge", value: 1 },
               { label: "Tajnik Udruge", value: 10 },
               { label: "Članovi Upravnog Odbora", value: 20 }
             ]
