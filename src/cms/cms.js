@@ -12,12 +12,14 @@ import NotificationsPreview from './preview-templates/NotificationsPreview';
 import ActivitiesPreview from './preview-templates/ActivitiesPreview';
 import HeaderPreview from './preview-templates/HeaderPreview';
 import FooterPreview from './preview-templates/FooterPreview';
+import ImagesGalleryPreview from './preview-templates/ImagesGalleryPreview';
 
 CMS.registerMediaLibrary(uploadcare);
 CMS.registerMediaLibrary(cloudinary);
 
 CMS.registerPreviewTemplate('index', IndexPagePreview);
 CMS.registerPreviewTemplate('members', MembersPagePreview);
+CMS.registerPreviewTemplate('images-gallery', ImagesGalleryPreview);
 CMS.registerPreviewTemplate('members-gallery', MembersGalleryPreview);
 CMS.registerPreviewTemplate('vision', VisionPagePreview);
 CMS.registerPreviewTemplate('about', AboutPagePreview);
