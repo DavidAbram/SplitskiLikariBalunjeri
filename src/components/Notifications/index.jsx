@@ -1,6 +1,16 @@
 import React from 'react';
 import { StaticQuery, graphql, Link } from 'gatsby';
 import Content, { HTMLContent } from '../Content';
+import styled from 'styled-components';
+import { colors, font, device } from '../styles';
+
+const StyledH2 = styled.h2`
+  ${font.fluidSize(18,24)}
+  font-weight: 700;
+  color: ${colors.primaryDark};
+  padding-bottom: 10px;
+  border-bottom: 3px solid ${colors.primaryDark};
+`;
 
 export const Notification = ({title, date, content, url, PageContent = Content}) => (
   <>
@@ -13,7 +23,7 @@ export const Notification = ({title, date, content, url, PageContent = Content})
 
 export const Notifications = ({ notifications }) => (
   <div>
-    <h2>Notifications</h2>
+    <StyledH2>Notifications</StyledH2>
     {notifications.map((
       {title, date, content, url}) => 
         <Notification 

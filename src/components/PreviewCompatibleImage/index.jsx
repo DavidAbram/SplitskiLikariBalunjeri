@@ -13,6 +13,7 @@ const PreviewCompatibleImage = ({ src, alt, height, width, maxHeight, maxWidth }
     display: 'inline-block',
     overflow: 'hidden',
     margin: 0,
+    backround: 'blue'
   };
 
   const imageStyle = {
