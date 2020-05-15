@@ -4,11 +4,10 @@ import { Member } from '../../components/Members';
 
 const MembersGalleryPreview = ({ entry }) => {
   const data = entry.getIn(['data']).toJS();
-  console.log(data);
   if (data) {
     return (
       <Member
-        image={data.image}
+        image={data.image.src}
         name={data.title}
         position={data.position}
       />
