@@ -1,15 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types';
-import { Activities } from '../../components/Activities';
+import { Activity } from '../../components/Activities';
 
 const ActivitiesPreview = ({ entry, widgetFor }) => {
   const data = entry.getIn(['data']).toJS();
   if (data) {
     return (
-      <Activities
+      <Activity
         content={widgetFor('body')}
         title={data.title}
-        date={data.date ? data.date.toISOString() : new Date()}
+        date={data.date ? data.date.toISOString() : new Date().toISOString()}
       />
     )
   } else {
