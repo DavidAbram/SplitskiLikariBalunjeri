@@ -2,7 +2,7 @@ import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 import PreviewCompatibleImage from '../PreviewCompatibleImage'
 
-const titles = {
+export const titles = {
   president: "Predsjednik Udruge",
   secretary: "Tajnik Udruge",
   member: "Članovi Upravnog Odbora",

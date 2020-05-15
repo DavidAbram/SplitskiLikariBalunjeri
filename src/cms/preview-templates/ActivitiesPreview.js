@@ -2,14 +2,14 @@ import React from 'react'
 import PropTypes from 'prop-types';
 import { Activities } from '../../components/Activities';
 
-const ActivitiesPreview = ({ entry, widgetFor, getAsset }) => {
+const ActivitiesPreview = ({ entry, widgetFor }) => {
   const data = entry.getIn(['data']).toJS();
   if (data) {
     return (
       <Activities
         content={widgetFor('body')}
         title={data.title}
-        date={data.date.toISOString()}
+        date={data.date ? data.date.toISOString() : new Date()}
       />
     )
   } else {
@@ -21,7 +21,6 @@ ActivitiesPreview.propTypes = {
   entry: PropTypes.shape({
     getIn: PropTypes.func,
   }),
-  getAsset: PropTypes.func,
 }
 
 export default ActivitiesPreview;

@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types';
 import { Notification } from '../../components/Notifications';
 
-const NotificationsPreview = ({ entry, widgetFor, getAsset }) => {
+const NotificationsPreview = ({ entry, widgetFor }) => {
   const data = entry.getIn(['data']).toJS()
 
   if (data) {
@@ -10,7 +10,7 @@ const NotificationsPreview = ({ entry, widgetFor, getAsset }) => {
       <Notification
         content={widgetFor('body')}
         title={data.title}
-        date={data.date.toISOString()}
+        date={data.date ? data.date.toISOString() : new Date()}
       />
     )
   } else {
@@ -22,7 +22,6 @@ NotificationsPreview.propTypes = {
   entry: PropTypes.shape({
     getIn: PropTypes.func,
   }),
-  getAsset: PropTypes.func,
 }
 
 export default NotificationsPreview;

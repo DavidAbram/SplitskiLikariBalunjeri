@@ -40,7 +40,7 @@ collections:
             }
           ]
       }
-  - name: "Members"
+  - name: "members-gallery"
     label: "Member"
     folder: "src/galleries/members"
     create: true
