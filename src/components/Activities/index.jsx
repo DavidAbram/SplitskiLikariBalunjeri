@@ -17,6 +17,7 @@ export const Activities = ({ activities }) => (
     {activities.map((
       {title, date, content, url}) => 
         <Activity 
+          key={`${title}-${date}`}
           PageContent={HTMLContent}
           title={title}
           date={date}

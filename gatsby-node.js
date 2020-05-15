@@ -28,7 +28,7 @@ exports.createPages = ({ actions, graphql }) => {
     }
 
     const posts = result.data.allMarkdownRemark.edges.filter(edge => 
-      edge.node.frontmatter.templateKey && !['members'].includes(edge.node.frontmatter.templateKey)
+      edge.node.frontmatter.templateKey && !['members', 'image-gallery'].includes(edge.node.frontmatter.templateKey)
     );
     
     

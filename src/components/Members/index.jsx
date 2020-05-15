@@ -9,8 +9,6 @@ export const titles = {
   liquidator: "Likvidator Udruge",
 }
 
-
-
 export const Member = ({name, position, image}) => (
   <>
     {name}
@@ -38,7 +36,7 @@ export const Members = ({ members }) => {
               member => member.position === Object.keys(titles)[index]
             )
             .map(
-              member => <Member image={member.image} name={member.name} position={member.position} />
+              member => <Member  key={`${title}-${member.name}`} image={member.image} name={member.name} position={member.position} />
               )
           }
           </>

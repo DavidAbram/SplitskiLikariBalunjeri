@@ -16,7 +16,8 @@ export const Notifications = ({ notifications }) => (
     <h2>Notifications</h2>
     {notifications.map((
       {title, date, content, url}) => 
-        <Notification 
+        <Notification
+          key={`${title}-${date}`}
           PageContent={HTMLContent}
           title={title}
           date={date}

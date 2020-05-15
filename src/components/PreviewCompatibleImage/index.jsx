@@ -39,10 +39,8 @@ const PreviewCompatibleImage = ({ src, alt, height, width, maxHeight, maxWidth }
 }
 
 PreviewCompatibleImage.propTypes = {
-  imageInfo: PropTypes.shape({
-    alt: PropTypes.string,
-    src: PropTypes.oneOfType([PropTypes.object, PropTypes.string]).isRequired,
-  }).isRequired,
+  alt: PropTypes.string,
+  src: PropTypes.oneOfType([PropTypes.object, PropTypes.string]).isRequired,
 };
 
 export default PreviewCompatibleImage;
