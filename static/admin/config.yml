@@ -215,12 +215,6 @@ collections:
             }
           - { label: Title, name: title, widget: string }
           - { label: "Naslov ciljeva", name: goalTitle, widget: string }
-          - label: "Ciljeva"
-            name: "goal"
-            widget: "list"
-            default: [""]
+          - { label: "Ciljevi", name: "goal", widget: "list" }
           - { label: "Naslov djelatnosti", name: activityTitle, widget: string }
-          - label: "Djelatnosti"
-            name: "activity"
-            widget: "list"
-            default: [""]
+          - { label: "Djelatnosti", name: "activity", widget: "list" }

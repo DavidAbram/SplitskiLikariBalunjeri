@@ -8,7 +8,6 @@ const AboutPagePreview = ({ entry, getAsset, widgetFor }) => {
   if (data) {
     return (
       <AboutPageTemplate
-        content={widgetFor('body')}
         title={data.title}
       />
     )
