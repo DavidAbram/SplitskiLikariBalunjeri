@@ -10,7 +10,7 @@ const NotificationsPreview = ({ entry, widgetFor }) => {
       <Notification
         content={widgetFor('body')}
         title={data.title}
-        date={data.date ? data.date.toISOString() : new Date().toISOString()}
+        date={data.date ? data.date.toISOString() : ''}
       />
     )
   } else {

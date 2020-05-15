@@ -4,17 +4,18 @@ import { Member } from '../../components/Members';
 
 const MembersGalleryPreview = ({ entry }) => {
   const data = entry.getIn(['data']).toJS();
+  console.log(data);
   if (data) {
     return (
       <Member
-        image={{ src: data.image.src }}
+        image={data.image}
         title={data.title}
         position={data.position}
       />
     )
   } else {
     return <div>Loading...</div>
-  }
+  } 
 }
 
 MembersGalleryPreview.propTypes = {
