@@ -52,8 +52,7 @@ collections:
         widget: "hidden",
         default: "members"
       }
-      - { label: "Full name", name: "fullName", widget: "string" }
-      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Full name and title", name: "title", widget: "string" }
       - { 
           label: "Position",
           name: "position",
@@ -71,12 +70,7 @@ collections:
         widget: object,
         fields:
           [
-            { label: Image, name: src, widget: image },
-            {
-              label: "Image description",
-              name: alt,
-              widget: string
-            }
+            { label: Image, name: src, widget: image }
           ]
       }
   - name: "config"
