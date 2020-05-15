@@ -2,7 +2,7 @@
 templateKey: about-page
 title: O udruzi
 ---
-## Udruga je osnovana s ciljem:  
+### Udruga je osnovana s ciljem:  
 
 * promicanja i razvitak nogometnog sporta
 * razvoj i promicanje sportske rekreacije 
@@ -14,7 +14,7 @@ title: O udruzi
 * razvoj i promicanje stavova iz područja djelovanja Udruge u pravcu utjecaja na svijest mladih ljudi u vrijednostima domovine, rodoljublja i povrata iseljenog intelektualnog potencijala u domovinu, primarno medicinske sfere, ali i sveg ostalog intelektualnog kapaciteta
 * humanitarno djelovanje članova Udruge u svrhu organiziranja humanitarnih projekata i aktivnosti
 
-## Polazeći od svojih ciljeva, Udruga se bavi sljedećim djelatnostima:
+### Polazeći od svojih ciljeva, Udruga se bavi sljedećim djelatnostima:
 
 * organizacijom nogometnih događanja, manifestacija sa sportskim predznakom i sportskih druženja i asocijacija u domovini i izvan nje
 * organizacija i provođenje aktivnosti usmjerenih ka razvoju funkcionalnih i motoričkih sposobnosti te unapređenja zdravstvenog statusa općenito
