@@ -19,7 +19,7 @@ CMS.registerMediaLibrary(cloudinary);
 
 CMS.registerPreviewTemplate('index', IndexPagePreview);
 CMS.registerPreviewTemplate('members', MembersPagePreview);
-CMS.registerPreviewTemplate('images-gallery', ImagesGalleryPreview);
+CMS.registerPreviewTemplate('image-gallery', ImagesGalleryPreview);
 CMS.registerPreviewTemplate('members-gallery', MembersGalleryPreview);
 CMS.registerPreviewTemplate('vision', VisionPagePreview);
 CMS.registerPreviewTemplate('about', AboutPagePreview);
