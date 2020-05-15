@@ -60,9 +60,9 @@ collections:
           widget: "select",
           options:
             [
-              { label: "Predsjednik Udruge", value: 1 },
-              { label: "Tajnik Udruge", value: 10 },
-              { label: "Članovi Upravnog Odbora", value: 20 }
+              { label: "Predsjednik Udruge", value: "president" },
+              { label: "Tajnik Udruge", value: "secretary" },
+              { label: "Članovi Upravnog Odbora", value: "member" }
             ]
         }
       - {
@@ -214,4 +214,13 @@ collections:
               default: "about-page",
             }
           - { label: Title, name: title, widget: string }
-          - { label: "Body", name: "body", widget: "markdown" }
+          - { label: "Naslov ciljeva", name: goalTitle, widget: string }
+          - label: "Ciljeva"
+            name: "goal"
+            widget: "list"
+            default: [""]
+          - { label: "Naslov djelatnosti", name: activityTitle, widget: string }
+          - label: "Djelatnosti"
+            name: "activity"
+            widget: "list"
+            default: [""]

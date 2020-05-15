@@ -55,7 +55,6 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
-        content
         date
       }
       fields {

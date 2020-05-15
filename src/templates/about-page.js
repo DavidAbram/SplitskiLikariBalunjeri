@@ -27,7 +27,6 @@ const AboutPage = ({ data }) => {
     <Layout>
       <AboutPageTemplate
         title={frontmatter.title}
-        content={html}
         PageContent={HTMLContent}
       />
     </Layout>
@@ -37,7 +36,6 @@ const AboutPage = ({ data }) => {
 AboutPage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
-      html: PropTypes.string,
       frontmatter: PropTypes.object,
     }),
   }),
@@ -48,7 +46,6 @@ export default AboutPage
 export const pageQuery = graphql`
   query AboutPageTemplate {
     markdownRemark(frontmatter: { templateKey: { eq: "about-page" } }) {
-      html
       frontmatter {
         title
       }
