@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout';
 import Title from '../components/Title';
+import Members from '../components/Members';
 import Content, { HTMLContent } from '../components/Content';
 
 export const AboutPageTemplate = ({
@@ -13,6 +14,7 @@ export const AboutPageTemplate = ({
   <>
     <Title>{title}</Title>
     <PageContent>{content}</PageContent>
+    <Members />
   </>
 )
 
