@@ -20,7 +20,7 @@ const PreviewCompatibleImage = ({ src, alt, height, width, maxHeight, maxWidth }
     height: '100%',
     objectFit: 'cover',
   }
-
+  console.log(src);
   if (src.childImageSharp && src.childImageSharp.fluid) {
     return (
       <div style={wrapStyle}>

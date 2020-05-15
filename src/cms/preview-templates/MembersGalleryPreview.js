@@ -9,7 +9,7 @@ const MembersGalleryPreview = ({ entry }) => {
     return (
       <Member
         image={data.image}
-        title={data.title}
+        name={data.title}
         position={data.position}
       />
     )
