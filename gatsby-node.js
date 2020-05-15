@@ -3,7 +3,7 @@ const { createFilePath } = require('gatsby-source-filesystem')
 const { fmImagesToRelative } = require('gatsby-remark-relative-images')
 
 exports.createPages = ({ actions, graphql }) => {
-  const { createPage } = actions;
+  const { createPage } = actions
 
   return graphql(`
     {
@@ -27,11 +27,13 @@ exports.createPages = ({ actions, graphql }) => {
       return Promise.reject(result.errors)
     }
 
-    const posts = result.data.allMarkdownRemark.edges.filter(edge => 
-      edge.node.frontmatter.templateKey && !['members', 'image-gallery'].includes(edge.node.frontmatter.templateKey)
-    );
-    
-    
+    const posts = result.data.allMarkdownRemark.edges.filter(
+      edge =>
+        edge.node.frontmatter.templateKey &&
+        !['members', 'image-gallery'].includes(
+          edge.node.frontmatter.templateKey
+        )
+    )
 
     posts.forEach(edge => {
       const id = edge.node.id

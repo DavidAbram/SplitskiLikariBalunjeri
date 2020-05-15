@@ -8,7 +8,7 @@ const BackgroundImage = styled.div`
   top: 0;
   left: 0;
   height: ${props =>  `${props.height || 300}px`};
-  background-image:  ${props => `url('${props.url}')`};
+  background-image:  ${props => `url(${props.url})`};
   background-size: cover;
   background-position: top 50% right 60%;
   z-index: -1;

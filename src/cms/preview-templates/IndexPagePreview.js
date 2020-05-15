@@ -1,6 +1,6 @@
-import React from 'react';
-import { IndexPageTemplate } from '../../templates/index-page';
+import React from 'react'
+import { IndexPageTemplate } from '../../templates/index-page'
 
-const IndexPagePreview = () => <IndexPageTemplate/>;
+const IndexPagePreview = () => <IndexPageTemplate />
 
-export default IndexPagePreview;
+export default IndexPagePreview

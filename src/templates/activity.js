@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
-import Layout from '../components/Layout';
-import Content, { HTMLContent } from '../components/Content';
-import { Activity } from '../components/Activities';
+import Layout from '../components/Layout'
+import Content, { HTMLContent } from '../components/Content'
+import { Activity } from '../components/Activities'
 
 export const ActivitiesTemplate = ({
   title,
@@ -12,7 +12,13 @@ export const ActivitiesTemplate = ({
   url,
   PageContent = Content,
 }) => (
-  <Activity title={title} content={content} date={date} url={url} PageContent={PageContent} />
+  <Activity
+    title={title}
+    content={content}
+    date={date}
+    url={url}
+    PageContent={PageContent}
+  />
 )
 
 ActivitiesTemplate.propTypes = {

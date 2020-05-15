@@ -1,9 +1,9 @@
 import React from 'react'
-import PropTypes from 'prop-types';
-import { Header } from '../../components/Header';
+import PropTypes from 'prop-types'
+import { Header } from '../../components/Header'
 
 const HeaderPreview = ({ entry, getAsset }) => {
-  const data = entry.getIn(['data']).toJS();
+  const data = entry.getIn(['data']).toJS()
   if (data) {
     return (
       <Header
@@ -25,4 +25,4 @@ HeaderPreview.propTypes = {
   getAsset: PropTypes.func,
 }
 
-export default HeaderPreview;
+export default HeaderPreview

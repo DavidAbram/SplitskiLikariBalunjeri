@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
-import Layout from '../components/Layout';
-import Title from '../components/Title';
-import Content, { HTMLContent } from '../components/Content';
+import Layout from '../components/Layout'
+import Title from '../components/Title'
+import Content, { HTMLContent } from '../components/Content'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 
 export const VisionPageTemplate = ({
@@ -15,7 +15,7 @@ export const VisionPageTemplate = ({
   <>
     <Title>{title}</Title>
     <PageContent>{content}</PageContent>
-    <PreviewCompatibleImage width='70%' height='35%' {...image} />
+    <PreviewCompatibleImage width="70%" height="35%" {...image} />
   </>
 )
 

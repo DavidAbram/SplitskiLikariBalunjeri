@@ -1,6 +1,6 @@
 import React from 'react'
-import PropTypes from 'prop-types';
-import { Notification } from '../../components/Notifications';
+import PropTypes from 'prop-types'
+import { Notification } from '../../components/Notifications'
 
 const NotificationsPreview = ({ entry, widgetFor }) => {
   const data = entry.getIn(['data']).toJS()
@@ -24,4 +24,4 @@ NotificationsPreview.propTypes = {
   }),
 }
 
-export default NotificationsPreview;
+export default NotificationsPreview

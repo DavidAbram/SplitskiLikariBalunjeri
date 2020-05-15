@@ -7,10 +7,7 @@ const ContactPagePreview = ({ entry, widgetFor, getAsset }) => {
 
   if (data) {
     return (
-      <ContactPageTemplate
-        content={widgetFor('body')}
-        title={data.title}
-      />
+      <ContactPageTemplate content={widgetFor('body')} title={data.title} />
     )
   } else {
     return <div>Loading...</div>
@@ -24,4 +21,4 @@ ContactPagePreview.propTypes = {
   getAsset: PropTypes.func,
 }
 
-export default ContactPagePreview;
+export default ContactPagePreview

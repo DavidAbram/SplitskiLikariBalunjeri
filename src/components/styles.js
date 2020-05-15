@@ -1,7 +1,7 @@
 const sizes = {
   mobile: {
     minimum: '320px',
-    maximum: '600px'
+    maximum: '600px',
   },
   tablet: {
     minimum: '601px',
@@ -10,7 +10,7 @@ const sizes = {
   desktop: {
     minimum: '1201px',
     maximum: '1800px',
-  }
+  },
 }
 
 export const device = {
@@ -41,5 +41,5 @@ export const font = {
     @media ${device.largeDesktop} {
       font-size: ${max}px;
     }
-  `
+  `,
 }

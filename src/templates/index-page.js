@@ -1,9 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Layout from '../components/Layout';
-import Notifications from '../components/Notifications';
-import Activities from '../components/Activities';
-import Gallery from '../components/Gallery';
+import React from 'react'
+import PropTypes from 'prop-types'
+import Layout from '../components/Layout'
+import Notifications from '../components/Notifications'
+import Activities from '../components/Activities'
+import Gallery from '../components/Gallery'
 
 export const IndexPageTemplate = () => (
   <>
@@ -26,5 +26,4 @@ const IndexPage = ({ data }) => {
   )
 }
 
-
-export default IndexPage;
+export default IndexPage

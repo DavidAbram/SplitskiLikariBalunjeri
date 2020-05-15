@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
-import Layout from '../components/Layout';
-import Content, { HTMLContent } from '../components/Content';
-import { Notification } from '../components/Notifications';
+import Layout from '../components/Layout'
+import Content, { HTMLContent } from '../components/Content'
+import { Notification } from '../components/Notifications'
 
 export const NotificationsTemplate = ({
   title,
@@ -17,7 +17,7 @@ export const NotificationsTemplate = ({
     title={title}
     content={content}
     date={date}
-    PageContent={PageContent} 
+    PageContent={PageContent}
   />
 )
 

@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
-import Layout from '../components/Layout';
-import Title from '../components/Title';
-import Members from '../components/Members';
-import Content, { HTMLContent } from '../components/Content';
+import Layout from '../components/Layout'
+import Title from '../components/Title'
+import Members from '../components/Members'
+import Content, { HTMLContent } from '../components/Content'
 
 export const AboutPageTemplate = ({
   title,
@@ -24,7 +24,7 @@ AboutPageTemplate.propTypes = {
 }
 
 const AboutPage = ({ data }) => {
-  const { frontmatter, html } = data.markdownRemark;
+  const { frontmatter, html } = data.markdownRemark
   return (
     <Layout>
       <AboutPageTemplate

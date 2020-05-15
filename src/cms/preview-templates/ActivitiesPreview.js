@@ -1,9 +1,9 @@
 import React from 'react'
-import PropTypes from 'prop-types';
-import { Activity } from '../../components/Activities';
+import PropTypes from 'prop-types'
+import { Activity } from '../../components/Activities'
 
 const ActivitiesPreview = ({ entry, widgetFor }) => {
-  const data = entry.getIn(['data']).toJS();
+  const data = entry.getIn(['data']).toJS()
   if (data) {
     return (
       <Activity
@@ -23,4 +23,4 @@ ActivitiesPreview.propTypes = {
   }),
 }
 
-export default ActivitiesPreview;
+export default ActivitiesPreview

@@ -14,6 +14,7 @@ const StyledSection = styled.section`
 export const Header = ({ title, subtitle, logo, hero, heroHeight }) => {
   return (
     <StyledSection>
+      <BackgroundImage height={heroHeight} url={hero} />  
       <Link to="/" style={{ textDecoration: 'none' }}>
         <LogoWrapper>
           <PreviewCompatibleImage height="200px" width="200px" src={logo} alt={'logo'} />
@@ -24,7 +25,6 @@ export const Header = ({ title, subtitle, logo, hero, heroHeight }) => {
           <Navigation />
         </LogoWrapper>
       </Link>
-      <BackgroundImage height={heroHeight} url={hero} />
     </StyledSection>
   );
 };

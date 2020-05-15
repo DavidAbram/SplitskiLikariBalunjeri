@@ -1,9 +1,9 @@
 import React from 'react'
-import PropTypes from 'prop-types';
-import { Footer } from '../../components/Footer';
+import PropTypes from 'prop-types'
+import { Footer } from '../../components/Footer'
 
 const FooterPreview = ({ entry, getAsset }) => {
-  const data = entry.getIn(['data']).toJS();
+  const data = entry.getIn(['data']).toJS()
   if (data) {
     return (
       <Footer
@@ -25,4 +25,4 @@ FooterPreview.propTypes = {
   getAsset: PropTypes.func,
 }
 
-export default FooterPreview;
+export default FooterPreview

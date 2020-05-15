@@ -1,9 +1,9 @@
 import React from 'react'
-import PropTypes from 'prop-types';
-import { VisionPageTemplate } from '../../templates/vision-page';
+import PropTypes from 'prop-types'
+import { VisionPageTemplate } from '../../templates/vision-page'
 
 const VisionPagePreview = ({ entry, widgetFor, getAsset }) => {
-  const data = entry.getIn(['data']).toJS();
+  const data = entry.getIn(['data']).toJS()
   if (data) {
     return (
       <VisionPageTemplate
@@ -25,4 +25,4 @@ VisionPagePreview.propTypes = {
   getAsset: PropTypes.func,
 }
 
-export default VisionPagePreview;
+export default VisionPagePreview
