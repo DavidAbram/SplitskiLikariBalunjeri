@@ -214,7 +214,4 @@ collections:
               default: "about-page",
             }
           - { label: Title, name: title, widget: string }
-          - { label: "Naslov ciljeva", name: goalTitle, widget: string }
-          - { label: "Ciljevi", name: "goal", widget: "list" }
-          - { label: "Naslov djelatnosti", name: activityTitle, widget: string }
-          - { label: "Djelatnosti", name: "activity", widget: "list" }
+          - { label: "Body", name: "body", widget: "markdown" }
