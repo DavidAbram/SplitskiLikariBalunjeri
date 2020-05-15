@@ -29,14 +29,14 @@ export const Members = ({ members }) => {
       {
         Object.values(titles).map((title, index) => (
           <>
-          <h3>{title}</h3>
+          <h3 key={title}>{title}</h3>
           {
             members
             .filter(
               member => member.position === Object.keys(titles)[index]
             )
             .map(
-              member => <Member  key={`${title}-${member.name}`} image={member.image} name={member.name} position={member.position} />
+              member => <Member key={`${title}-${member.name}`} image={member.image} name={member.name} position={member.position} />
               )
           }
           </>

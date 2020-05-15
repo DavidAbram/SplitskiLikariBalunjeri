@@ -2,17 +2,12 @@ import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 import PreviewCompatibleImage from '../PreviewCompatibleImage'
 
-export const Image = () => (
-  <>
-  </>
-);
+export const Image = ({ image }) => <PreviewCompatibleImage width="60%" {...image} /> 
+;
 
 export const Gallery = ({ images }) => {
   console.log(images);
-  return (
-    <div>
-    </div>
-  )
+  return images.map(image => <Image key={image.title} image={image.image} />);
 };
 
 
@@ -44,7 +39,7 @@ const GalleryWithQuery = () => (
       data.allMarkdownRemark.nodes.map(node => 
         ({
           title: node.frontmatter.title,
-          date: node.frontmatter.position,
+          date: node.frontmatter.date,
           image: node.frontmatter.image,
         })
       )} 
