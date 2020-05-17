@@ -1,12 +1,30 @@
 import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
-import PreviewCompatibleImage from '../PreviewCompatibleImage'
+import styled from 'styled-components';
+import { colors, font } from '../styles';
+import PreviewCompatibleImage from '../PreviewCompatibleImage';
 
-export const Image = ({ image }) => <PreviewCompatibleImage width="60%" {...image} /> 
+
+export const Image = ({ image }) => <PreviewCompatibleImage width="100%" {...image} /> 
 ;
 
+const StyledH2 = styled.h2`
+  ${font.fluidSize(18,24, font.family)}
+  font-weight: 700;
+  color: ${colors.primaryDark};
+  padding-bottom: 10px;
+  border-bottom: 3px solid ${colors.primaryDark};
+`;
+
+
 export const Gallery = ({ images }) => {
-  return images.map(image => <Image key={image.title} image={image.image} />);
+  return (
+    <>
+      <StyledH2>Gallery</StyledH2>
+      {
+        images.map(image => <Image key={image.title} image={image.image} />)
+      }
+    </>);
 };
 
 

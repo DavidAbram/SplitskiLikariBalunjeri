@@ -4,7 +4,8 @@ import styled from 'styled-components';
 import PreviewCompatibleImage from '../PreviewCompatibleImage';
 import Navigation from '../Navigation';
 import BackgroundImage from './BackgroundImage';
-import LogoWrapper from './Logo';
+import Wrapper from './Wrapper';
+import Text from './Text';
 
 const StyledSection = styled.section`
   overflow:hidden;
@@ -14,18 +15,20 @@ const StyledSection = styled.section`
 export const Header = ({ title, subtitle, logo, hero, heroHeight }) => {
   return (
     <StyledSection>
-      <BackgroundImage height={heroHeight} url={hero} />  
-      <Link to="/" style={{ textDecoration: 'none' }}>
-        <LogoWrapper>
+      <BackgroundImage height={heroHeight} url={hero} />
+      <Wrapper>
+        <Link to="/" style={{ textDecoration: 'none' }}>
           <PreviewCompatibleImage height="200px" width="200px" src={logo} alt={'logo'} />
-          <LogoWrapper.Text>
+        </Link>
+        <Link to="/" style={{ textDecoration: 'none' }}>
+          <Text>
             <h1>{title}</h1>
             <h6>{subtitle}</h6>
-          </LogoWrapper.Text>
-          <Navigation />
-        </LogoWrapper>
-      </Link>
-    </StyledSection>
+          </Text>
+        </Link>
+        <Navigation />
+      </Wrapper>
+    </StyledSection >
   );
 };
 
