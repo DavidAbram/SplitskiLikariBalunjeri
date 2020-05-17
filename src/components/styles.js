@@ -35,9 +35,10 @@ export const colors = {
 }
 
 export const font = {
-  family: 'Roboto',
+  family: `'Raleway', sans-serif'`,
   fluidSize: (min, max) => `
     font-size: calc(${min}px + (${max} - ${min}) * ((100vw - ${viewport.min}px) / (${viewport.max} - ${viewport.min})));
+
     @media ${device.largeDesktop} {
       font-size: ${max}px;
     }
