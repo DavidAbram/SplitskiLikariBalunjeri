@@ -6,7 +6,6 @@ export const Image = ({ image }) => <PreviewCompatibleImage width="60%" {...imag
 ;
 
 export const Gallery = ({ images }) => {
-  console.log(images);
   return images.map(image => <Image key={image.title} image={image.image} />);
 };
 
