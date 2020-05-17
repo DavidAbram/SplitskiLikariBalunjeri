@@ -40,17 +40,6 @@ export const Notifications = ({ notifications }) => (
         url={url}
       />
     )}
-     {notifications.map((
-      { title, date, content, url }) =>
-      <Notification
-        key={`${title}-${date}`}
-        PageContent={HTMLContent}
-        title={title}
-        date={date}
-        content={content}
-        url={url}
-      />
-    )}
   </StyledDiv>
 )
 
