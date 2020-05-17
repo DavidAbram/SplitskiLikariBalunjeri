@@ -5,12 +5,13 @@ import styled from 'styled-components';
 import { colors, font, device } from '../styles';
 
 const StyledH2 = styled.h2`
-  ${font.fluidSize(18,24)}
+  ${font.fluidSize(18,24, font.family)}
   font-weight: 700;
   color: ${colors.primaryDark};
   padding-bottom: 10px;
   border-bottom: 3px solid ${colors.primaryDark};
 `;
+
 
 export const Activity = ({title, date, content, url, PageContent = Content}) => (
   <>

@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { colors, font, device } from '../styles';
 
 const StyledNavigation = styled.nav`
-  ${font.fluidSize(16, 20)}
+  ${font.fluidSize(16, 20, font.family)}
   color: ${colors.primaryDark};
   display: flex;
   font-weight: 700;
@@ -12,7 +12,7 @@ const StyledNavigation = styled.nav`
   left: 220px;
   max-width: calc(100% - 200px - 20px);
   position: absolute;
-  top: 100%;
+  top: calc(100% - 10px);
   width: 450px;
   a {
     color: inherit;

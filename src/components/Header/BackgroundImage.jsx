@@ -1,6 +1,5 @@
-import React from 'react';
 import styled from 'styled-components';
-import { device, viewport } from '../styles';
+import { device } from '../styles';
 
 const BackgroundImage = styled.div`
   background-image:  ${props => `url(${props.url})`};

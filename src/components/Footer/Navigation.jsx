@@ -10,7 +10,7 @@ max-height: 160px;
 width: 25%;
 
 a {
-  ${font.fluidSize(14, 16)}
+  ${font.fluidSize(14, 16, font.family)}
   letter-spacing: 1.25px;
   color: inherit;
   flex-basis: 50%;

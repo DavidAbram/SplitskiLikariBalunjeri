@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
+import { colors } from '../styles';
 
 const Head = ({
   siteTitle,
@@ -143,10 +144,13 @@ const Head = ({
         type="image/png"
       />
       <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700&display=swap" rel="stylesheet" />
+      <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"/>
       <style type="text/css">{`
         body {
           margin: 0;
-          font-family: 'Raleway', sans-serif;
+          background: ${colors.grayLight};
+          color: ${colors.black};
+          font-family: 'Roboto', sans-serif;
         }
       `}
       </style>

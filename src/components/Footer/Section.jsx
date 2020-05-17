@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { font, device } from '../styles';
 
 const StyledSection = styled.div`
-  ${font.fluidSize(14, 16)}
+  ${font.fluidSize(14, 16, font.family)}
   align-items: center;
   
   display: flex;
