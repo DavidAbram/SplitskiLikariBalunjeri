@@ -4,6 +4,7 @@ import { HTMLContent } from '../Content';
 import styled from 'styled-components';
 import { colors, font } from '../styles';
 import Activity from './Activity';
+export { default as Activity } from './Activity';
 
 const StyledH2 = styled.h2`
   ${font.fluidSize(18,24, font.family)}

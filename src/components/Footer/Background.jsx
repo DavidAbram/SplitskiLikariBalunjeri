@@ -1,6 +1,5 @@
-import React from 'react';
 import styled from 'styled-components';
-import { colors, font, device } from '../styles';
+import { colors } from '../styles';
 
 const ColoredBackground = styled.section`
   background-color: ${colors.primaryDark};

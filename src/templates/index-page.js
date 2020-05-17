@@ -1,11 +1,11 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import styled from 'styled-components';
-import Layout from '../components/Layout';
-import Notifications from '../components/Notifications';
-import Activities from '../components/Activities';
-import Gallery from '../components/Gallery';
-import { device } from '../components/styles';
+import React from 'react'
+import PropTypes from 'prop-types'
+import styled from 'styled-components'
+import Layout from '../components/Layout'
+import Notifications from '../components/Notifications'
+import Activities from '../components/Activities'
+import Gallery from '../components/Gallery'
+import { device } from '../components/styles'
 
 const StyledWrapper = styled.div`
   display: flex;
@@ -14,8 +14,7 @@ const StyledWrapper = styled.div`
   @media ${device.mobile} {
     flex-wrap: wrap;
   }
-`;
-
+`
 
 const StyledDiv = styled.div`
   flex-basis: 30%;
@@ -26,7 +25,7 @@ const StyledDiv = styled.div`
     flex-basis: 100%;
     width: 100%;
   }
-`;
+`
 
 export const IndexPageTemplate = () => (
   <StyledWrapper>

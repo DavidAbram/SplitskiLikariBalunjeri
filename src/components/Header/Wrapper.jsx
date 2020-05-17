@@ -1,6 +1,5 @@
-import React from 'react';
 import styled from 'styled-components';
-import { colors, font, device } from '../styles';
+import { device } from '../styles';
 
 const Wrapper = styled.div`
   align-items: center;

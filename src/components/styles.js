@@ -37,7 +37,6 @@ export const colors = {
 }
 
 export const font = {
-
   family: `'Raleway', sans-serif`,
   fluidSize: (min, max, family = `'Raleway', sans-serif`) => `
     font-size: calc(${min}px + (${max} - ${min}) * ((100vw - ${viewport.min}px) / (${viewport.max} - ${viewport.min})));
