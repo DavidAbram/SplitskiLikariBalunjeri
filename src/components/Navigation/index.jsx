@@ -31,6 +31,10 @@ const StyledNavigation = styled.nav`
       padding: 20px 15px;
       position: relative;
       top: -1px;
+      margin-top: -10px;
+      a {
+        padding: 10px 0;
+      }
   }
 `;
 

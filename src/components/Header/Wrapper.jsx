@@ -24,8 +24,8 @@ const Wrapper = styled.div`
 
     & > a:first-child {
       margin: auto !important;
-      padding-bottom: 0;
       padding: 30px;
+      padding-bottom: 0;
     }
   }
 
