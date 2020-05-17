@@ -1,41 +1,57 @@
 import React from 'react';
-import { StaticQuery, graphql, Link } from 'gatsby';
-import Content, { HTMLContent } from '../Content';
+import { StaticQuery, graphql } from 'gatsby';
+import { HTMLContent } from '../Content';
 import styled from 'styled-components';
 import { colors, font, device } from '../styles';
+import Notification from './Notification';
 
 const StyledH2 = styled.h2`
-  ${font.fluidSize(18,24)}
+  ${font.fluidSize(18, 24, font.family)}
   font-weight: 700;
   color: ${colors.primaryDark};
   padding-bottom: 10px;
   border-bottom: 3px solid ${colors.primaryDark};
 `;
 
-export const Notification = ({title, date, content, url, PageContent = Content}) => (
-  <>
-    <div>{title}</div>
-    <div>{date}</div>
-    <Link to={url}>{url}</Link>
-    <PageContent>{content}</PageContent>
-  </>
-);
+const StyledDiv = styled.div`
+  max-width: 850px;
+  flex-basis: calc(70% - 30px);
+  width: calc(70% - 30px);
+
+  @media ${device.mobile} {
+    order: 1;
+    flex-basis: 100%;
+    width: 100%;
+  }
+
+`
 
 export const Notifications = ({ notifications }) => (
-  <div>
+  <StyledDiv>
     <StyledH2>Notifications</StyledH2>
     {notifications.map((
-      {title, date, content, url}) => 
-        <Notification
-          key={`${title}-${date}`}
-          PageContent={HTMLContent}
-          title={title}
-          date={date}
-          content={content}
-          url={url}
-        />
-      )}
-  </div>
+      { title, date, content, url }) =>
+      <Notification
+        key={`${title}-${date}`}
+        PageContent={HTMLContent}
+        title={title}
+        date={date}
+        content={content}
+        url={url}
+      />
+    )}
+     {notifications.map((
+      { title, date, content, url }) =>
+      <Notification
+        key={`${title}-${date}`}
+        PageContent={HTMLContent}
+        title={title}
+        date={date}
+        content={content}
+        url={url}
+      />
+    )}
+  </StyledDiv>
 )
 
 
@@ -58,8 +74,8 @@ const NotificationsWithQuery = () => (
       }
     `}
     render={data => (<Notifications notifications={
-      data.allMarkdownRemark.nodes.map(node => 
-        ({ 
+      data.allMarkdownRemark.nodes.map(node =>
+        ({
           content: node.html,
           title: node.frontmatter.title,
           date: node.frontmatter.date,
@@ -70,4 +86,6 @@ const NotificationsWithQuery = () => (
   />
 );
 
+
+export { default as Notification } from './Notification';
 export default NotificationsWithQuery;

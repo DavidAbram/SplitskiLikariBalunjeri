@@ -30,14 +30,19 @@ export const colors = {
   primary: '#57ACE4',
   primaryLight: '#C3F1FF',
   secondary: '#FE0000',
+  grayLight: '#F2F3F4',
   black: '#000',
+  black2: '#0C0E47',
   white: '#FFF',
 }
 
 export const font = {
-  family: 'Roboto',
-  fluidSize: (min, max) => `
+
+  family: `'Raleway', sans-serif`,
+  fluidSize: (min, max, family = `'Raleway', sans-serif`) => `
     font-size: calc(${min}px + (${max} - ${min}) * ((100vw - ${viewport.min}px) / (${viewport.max} - ${viewport.min})));
+    font-family: ${family};
+
     @media ${device.largeDesktop} {
       font-size: ${max}px;
     }

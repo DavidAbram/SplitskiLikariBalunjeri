@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import { colors, font, device } from '../styles';
+import { colors, font } from '../styles';
 
 const StyledH2 = styled.h2`
-  ${font.fluidSize(18,24)}
+  ${font.fluidSize(18,24, font.family)}
   font-weight: 700;
   color: ${colors.primaryDark};
   padding-bottom: 10px;
