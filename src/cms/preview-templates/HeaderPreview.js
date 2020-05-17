@@ -1,9 +1,9 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { Header } from '../../components/Header'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Header } from '../../components/Header';
 
 const HeaderPreview = ({ entry, getAsset }) => {
-  const data = entry.getIn(['data']).toJS()
+  const data = entry.getIn(['data']).toJS();
   if (data) {
     return (
       <Header
@@ -12,17 +12,17 @@ const HeaderPreview = ({ entry, getAsset }) => {
         logo={data.logo}
         hero={data.hero}
       />
-    )
+    );
   } else {
-    return <div>Loading...</div>
+    return <div>Loading...</div>;
   }
-}
+};
 
 HeaderPreview.propTypes = {
   entry: PropTypes.shape({
     getIn: PropTypes.func,
   }),
   getAsset: PropTypes.func,
-}
+};
 
-export default HeaderPreview
+export default HeaderPreview;

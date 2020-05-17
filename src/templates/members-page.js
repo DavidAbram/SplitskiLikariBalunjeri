@@ -1,9 +1,9 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
-import Layout from '../components/Layout'
-import Title from '../components/Title'
-import Content, { HTMLContent } from '../components/Content'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { graphql } from 'gatsby';
+import Layout from '../components/Layout';
+import Title from '../components/Title';
+import Content, { HTMLContent } from '../components/Content';
 
 export const MembersPageTemplate = ({
   title,
@@ -14,15 +14,15 @@ export const MembersPageTemplate = ({
     <Title>{title}</Title>
     <PageContent>{content}</PageContent>
   </>
-)
+);
 
 MembersPageTemplate.propTypes = {
   title: PropTypes.string,
   content: PropTypes.string,
-}
+};
 
 const MembersPage = ({ data }) => {
-  const { frontmatter, html } = data.markdownRemark
+  const { frontmatter, html } = data.markdownRemark;
 
   return (
     <Layout>
@@ -32,8 +32,8 @@ const MembersPage = ({ data }) => {
         PageContent={HTMLContent}
       />
     </Layout>
-  )
-}
+  );
+};
 
 MembersPage.propTypes = {
   data: PropTypes.shape({
@@ -42,9 +42,9 @@ MembersPage.propTypes = {
       frontmatter: PropTypes.object,
     }),
   }),
-}
+};
 
-export default MembersPage
+export default MembersPage;
 
 export const pageQuery = graphql`
   query MembersPageTemplate {
@@ -55,4 +55,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

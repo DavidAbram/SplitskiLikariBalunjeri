@@ -1,9 +1,9 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { Activity } from '../../components/Activities'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Activity } from '../../components/Activities';
 
 const ActivitiesPreview = ({ entry, widgetFor }) => {
-  const data = entry.getIn(['data']).toJS()
+  const data = entry.getIn(['data']).toJS();
   if (data) {
     return (
       <Activity
@@ -11,16 +11,16 @@ const ActivitiesPreview = ({ entry, widgetFor }) => {
         title={data.title}
         date={data.date ? data.date.toISOString() : ''}
       />
-    )
+    );
   } else {
-    return <div>Loading...</div>
+    return <div>Loading...</div>;
   }
-}
+};
 
 ActivitiesPreview.propTypes = {
   entry: PropTypes.shape({
     getIn: PropTypes.func,
   }),
-}
+};
 
-export default ActivitiesPreview
+export default ActivitiesPreview;

@@ -1,9 +1,9 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { Footer } from '../../components/Footer'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Footer } from '../../components/Footer';
 
 const FooterPreview = ({ entry, getAsset }) => {
-  const data = entry.getIn(['data']).toJS()
+  const data = entry.getIn(['data']).toJS();
   if (data) {
     return (
       <Footer
@@ -12,17 +12,17 @@ const FooterPreview = ({ entry, getAsset }) => {
         additionalData={data.additionalData}
         logo={data.logo}
       />
-    )
+    );
   } else {
-    return <div>Loading...</div>
+    return <div>Loading...</div>;
   }
-}
+};
 
 FooterPreview.propTypes = {
   entry: PropTypes.shape({
     getIn: PropTypes.func,
   }),
   getAsset: PropTypes.func,
-}
+};
 
-export default FooterPreview
+export default FooterPreview;

@@ -1,10 +1,10 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
-import Layout from '../components/Layout'
-import Title from '../components/Title'
-import Content, { HTMLContent } from '../components/Content'
-import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { graphql } from 'gatsby';
+import Layout from '../components/Layout';
+import Title from '../components/Title';
+import Content, { HTMLContent } from '../components/Content';
+import PreviewCompatibleImage from '../components/PreviewCompatibleImage';
 
 export const VisionPageTemplate = ({
   title,
@@ -17,15 +17,15 @@ export const VisionPageTemplate = ({
     <PageContent>{content}</PageContent>
     <PreviewCompatibleImage width="70%" height="35%" {...image} />
   </>
-)
+);
 
 VisionPageTemplate.propTypes = {
   title: PropTypes.string,
   content: PropTypes.string,
-}
+};
 
 const VisionPage = ({ data }) => {
-  const { frontmatter, html } = data.markdownRemark
+  const { frontmatter, html } = data.markdownRemark;
   return (
     <Layout>
       <VisionPageTemplate
@@ -35,8 +35,8 @@ const VisionPage = ({ data }) => {
         PageContent={HTMLContent}
       />
     </Layout>
-  )
-}
+  );
+};
 
 VisionPage.propTypes = {
   data: PropTypes.shape({
@@ -45,9 +45,9 @@ VisionPage.propTypes = {
       frontmatter: PropTypes.object,
     }),
   }),
-}
+};
 
-export default VisionPage
+export default VisionPage;
 
 export const pageQuery = graphql`
   query VisionPageTemplate {
@@ -68,4 +68,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

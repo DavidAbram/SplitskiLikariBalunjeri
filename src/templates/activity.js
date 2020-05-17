@@ -1,9 +1,9 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
-import Layout from '../components/Layout'
-import Content, { HTMLContent } from '../components/Content'
-import { Activity } from '../components/Activities'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { graphql } from 'gatsby';
+import Layout from '../components/Layout';
+import Content, { HTMLContent } from '../components/Content';
+import { Activity } from '../components/Activities';
 
 export const ActivitiesTemplate = ({
   title,
@@ -19,17 +19,17 @@ export const ActivitiesTemplate = ({
     url={url}
     PageContent={PageContent}
   />
-)
+);
 
 ActivitiesTemplate.propTypes = {
   title: PropTypes.string,
   content: PropTypes.string,
   date: PropTypes.string,
   url: PropTypes.string,
-}
+};
 
 const Activities = ({ data }) => {
-  const { frontmatter, html, fields } = data.markdownRemark
+  const { frontmatter, html, fields } = data.markdownRemark;
   return (
     <Layout>
       <ActivitiesTemplate
@@ -40,8 +40,8 @@ const Activities = ({ data }) => {
         PageContent={HTMLContent}
       />
     </Layout>
-  )
-}
+  );
+};
 
 Activities.propTypes = {
   data: PropTypes.shape({
@@ -51,9 +51,9 @@ Activities.propTypes = {
       fields: PropTypes.object,
     }),
   }),
-}
+};
 
-export default Activities
+export default Activities;
 
 export const pageQuery = graphql`
   query ActivitiesTemplate {
@@ -68,4 +68,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

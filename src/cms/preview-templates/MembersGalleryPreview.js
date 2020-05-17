@@ -1,9 +1,9 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { Member } from '../../components/Members'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Member } from '../../components/Members';
 
 const MembersGalleryPreview = ({ entry }) => {
-  const data = entry.getIn(['data']).toJS()
+  const data = entry.getIn(['data']).toJS();
   if (data) {
     return (
       <Member
@@ -11,16 +11,16 @@ const MembersGalleryPreview = ({ entry }) => {
         name={data.title}
         position={data.position}
       />
-    )
+    );
   } else {
-    return <div>Loading...</div>
+    return <div>Loading...</div>;
   }
-}
+};
 
 MembersGalleryPreview.propTypes = {
   entry: PropTypes.shape({
     getIn: PropTypes.func,
   }),
-}
+};
 
-export default MembersGalleryPreview
+export default MembersGalleryPreview;

@@ -1,9 +1,9 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
-import Layout from '../components/Layout'
-import Title from '../components/Title'
-import Content, { HTMLContent } from '../components/Content'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { graphql } from 'gatsby';
+import Layout from '../components/Layout';
+import Title from '../components/Title';
+import Content, { HTMLContent } from '../components/Content';
 
 export const ContactPageTemplate = ({
   title,
@@ -14,15 +14,15 @@ export const ContactPageTemplate = ({
     <Title>{title}</Title>
     <PageContent>{content}</PageContent>
   </>
-)
+);
 
 ContactPageTemplate.propTypes = {
   title: PropTypes.string,
   content: PropTypes.string,
-}
+};
 
 const ContactPage = ({ data }) => {
-  const { frontmatter, html } = data.markdownRemark
+  const { frontmatter, html } = data.markdownRemark;
   return (
     <Layout>
       <ContactPageTemplate
@@ -31,8 +31,8 @@ const ContactPage = ({ data }) => {
         PageContent={HTMLContent}
       />
     </Layout>
-  )
-}
+  );
+};
 
 ContactPage.propTypes = {
   data: PropTypes.shape({
@@ -41,9 +41,9 @@ ContactPage.propTypes = {
       frontmatter: PropTypes.object,
     }),
   }),
-}
+};
 
-export default ContactPage
+export default ContactPage;
 
 export const pageQuery = graphql`
   query ContactPageTemplate {
@@ -54,4 +54,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
