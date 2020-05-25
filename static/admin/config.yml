@@ -170,6 +170,9 @@ collections:
               widget: "hidden",
               default: "index-page",
             }
+          - { label: "Notifications title", name: notificationsTitle, widget: string }
+          - { label: "Activities title", name: activitiesTitle, widget: string }
+          - { label: "Gallery title", name: galleryTitle, widget: string }
       - file: "src/pages/kontakt/index.md"
         label: "Contact Page"
         name: "contact"

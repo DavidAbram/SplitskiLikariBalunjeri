@@ -5,7 +5,7 @@ import Layout from '../components/Layout';
 import Notifications from '../components/Notifications';
 import Activities from '../components/Activities';
 import Gallery from '../components/Gallery';
-import { device } from '../components/styles';
+import { device, font, colors } from '../components/styles';
 
 const StyledWrapper = styled.div`
   display: flex;
@@ -27,27 +27,44 @@ const StyledDiv = styled.div`
   }
 `;
 
-export const IndexPageTemplate = () => (
+export const IndexPageTemplate = (props) => (
   <StyledWrapper>
-    <Notifications />
+    <Notifications title={props.notificationsTitle} />
     <StyledDiv>
-      <Activities />
-      <Gallery />
+      <Activities title={props.activitiesTitle} />
+      <Gallery title={props.galleryTitle}  />
     </StyledDiv>
   </StyledWrapper>
 );
 
 IndexPageTemplate.propTypes = {
-  title: PropTypes.string,
-  content: PropTypes.string,
+  notificationsTitle: PropTypes.string,
+  activitiesTitle: PropTypes.string,
+  galleryTitle: PropTypes.string,
 };
 
 const IndexPage = ({ data }) => {
   return (
     <Layout>
-      <IndexPageTemplate />
+      <IndexPageTemplate 
+        notificationsTitle={data.markdownRemark.frontmatter.notificationsTitle}
+        activitiesTitle={data.markdownRemark.frontmatter.activitiesTitle}
+        galleryTitle={data.markdownRemark.frontmatter.galleryTitle}
+      />
     </Layout>
   );
 };
+
+export const pageQuery = graphql`
+  query IndexPageTemplate {
+    markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
+      frontmatter {
+        notificationsTitle
+        activitiesTitle
+        galleryTitle
+      }
+    }
+  }
+`;
 
 export default IndexPage;

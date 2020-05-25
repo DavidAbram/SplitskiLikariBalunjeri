@@ -2,16 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
-import Title from '../components/Title';
 import Notifications from '../components/Notifications';
 
 export const NotificationsPageTemplate = ({
   title,
 }) => (
-  <>
-    <Title>{title}</Title>
-    <Notifications />
-  </>
+    <Notifications title={title} />
 );
 
 NotificationsPageTemplate.propTypes = {

@@ -2,16 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
-import Title from '../components/Title';
 import Activities from '../components/Activities';
 
 export const ActivitiesPageTemplate = ({
   title,
 }) => (
-  <>
-    <Title>{title}</Title>
-    <Activities />
-  </>
+    <Activities title={title} />
 );
 
 ActivitiesPageTemplate.propTypes = {
