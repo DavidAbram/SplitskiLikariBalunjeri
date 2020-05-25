@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 import Content from '../Content';
-import { colors, font, device } from '../styles';
+import { colors, device } from '../styles';
 
 const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 
