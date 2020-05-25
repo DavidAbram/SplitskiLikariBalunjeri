@@ -138,7 +138,7 @@ collections:
   - name: "pages"
     label: "Pages"
     files:
-      - file: "src/pages/notifications/index.md"
+      - file: "src/pages/obavijesti/index.md"
         label: "Notifications Page"
         name: "notifications-page"
         fields:
@@ -149,7 +149,7 @@ collections:
               default: "notifications-page",
             }
           - { label: Title, name: title, widget: string }
-      - file: "src/pages/activities/index.md"
+      - file: "src/pages/aktivnosti/index.md"
         label: "Activities Page"
         name: "activities-page"
         fields:
