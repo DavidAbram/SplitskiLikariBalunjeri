@@ -1,10 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import Title from '../components/Title';
-import Content, { HTMLContent } from '../components/Content';
+import Content, { HTMLContent, StyledContent } from '../components/Content';
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage';
+
+const CenteredImageWrapper = styled.div`
+  padding-top: 30px;
+  margin: auto;
+  max-width: 900px;
+  width: 100%;
+`;
 
 export const VisionPageTemplate = ({
   title,
@@ -12,12 +20,18 @@ export const VisionPageTemplate = ({
   image,
   PageContent = Content,
 }) => (
-  <>
-    <Title>{title}</Title>
-    <PageContent>{content}</PageContent>
-    <PreviewCompatibleImage width="70%" height="35%" {...image} />
-  </>
-);
+    <>
+      <Title>{title}</Title>
+      <StyledContent>
+        <PageContent>
+          {content}
+        </PageContent>
+      </StyledContent>
+      <CenteredImageWrapper>
+        <PreviewCompatibleImage width="100%" height="auto" {...image} />
+      </CenteredImageWrapper>
+    </>
+  );
 
 VisionPageTemplate.propTypes = {
   title: PropTypes.string,

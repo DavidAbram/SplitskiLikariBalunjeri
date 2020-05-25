@@ -4,6 +4,7 @@ import { HTMLContent } from '../Content';
 import styled from 'styled-components';
 import { colors, font, device } from '../styles';
 import Notification from './Notification';
+import { NotificationLandingStyles } from './NotificationWrapper';
 
 const StyledH2 = styled.h2`
   ${font.fluidSize(18, 24, font.family)}
@@ -18,8 +19,19 @@ const StyledDiv = styled.div`
   flex-basis: calc(70% - 30px);
   width: calc(70% - 30px);
 
+  .notification {
+    ${NotificationLandingStyles}
+  }
+
+  @media ${device.tablet} {
+    min-width: 600px;
+    flex-grow: 1;
+    flex-basis: calc(70% - 30px);
+    width: calc(70% - 30px);
+    margin-right: 30px;
+  }
+
   @media ${device.mobile} {
-    order: 1;
     flex-basis: 100%;
     width: 100%;
   }

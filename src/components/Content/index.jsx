@@ -1,14 +1,15 @@
 import React from 'react';
+import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-export const HTMLContent = ({ children }) => {
+export const HTMLContent = ({ children, style = {} , className = '' }) => {
   return (
-    <div dangerouslySetInnerHTML={{ __html: children }} />
+    <div style={style} className={className} dangerouslySetInnerHTML={{ __html: children }} />
   )
 }
 
-const Content = ({ children }) => (
-  <div>{children}</div>
+const Content = ({ children, style = {} , className = ''}) => (
+  <div style={style} className={className} >{children}</div>
 )
 
 Content.propTypes = {
@@ -17,5 +18,12 @@ Content.propTypes = {
 }
 
 HTMLContent.propTypes = Content.propTypes;
+
+
+export const StyledContent = styled.div`
+  margin: auto;
+  text-align: justify;
+`;
+
 
 export default Content;

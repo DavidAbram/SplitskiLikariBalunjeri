@@ -11,6 +11,10 @@ const StyledWrapper = styled.div`
   display: flex;
   justify-content: space-between;
 
+  @media ${device.tablet} {
+    flex-wrap: wrap;
+  }
+
   @media ${device.mobile} {
     flex-wrap: wrap;
   }
@@ -20,10 +24,23 @@ const StyledDiv = styled.div`
   flex-basis: 30%;
   width: 30%;
 
+  @media ${device.tablet} {
+    flex-grow: 1;
+    flex-basis: 30%;
+    width: 30%;
+    
+    .activity {
+      width: calc(100% - 35px);  
+      margin: 17.5px;
+    }
+  }
+
   @media ${device.mobile} {
-    order: 0;
     flex-basis: 100%;
     width: 100%;
+    .activity {
+      margin: 20px;
+    }
   }
 `;
 

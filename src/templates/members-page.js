@@ -3,18 +3,22 @@ import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import Title from '../components/Title';
-import Content, { HTMLContent } from '../components/Content';
+import Content, { HTMLContent, StyledContent } from '../components/Content';
 
 export const MembersPageTemplate = ({
   title,
   content,
   PageContent = Content,
 }) => (
-  <>
-    <Title>{title}</Title>
-    <PageContent>{content}</PageContent>
-  </>
-);
+    <>
+      <Title>{title}</Title>
+      <StyledContent>
+        <PageContent>
+          {content}
+        </PageContent>
+      </StyledContent>
+    </>
+  );
 
 MembersPageTemplate.propTypes = {
   title: PropTypes.string,
