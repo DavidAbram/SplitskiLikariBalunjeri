@@ -38,9 +38,9 @@ const StyledDiv = styled.div`
 
 `
 
-export const Notifications = ({ notifications }) => (
+export const Notifications = ({ title, notifications }) => (
   <StyledDiv>
-    <StyledH2>Notifications</StyledH2>
+    <StyledH2>{title}</StyledH2>
     {notifications.map((
       { title, date, content, url }) =>
       <Notification
@@ -53,10 +53,10 @@ export const Notifications = ({ notifications }) => (
       />
     )}
   </StyledDiv>
-)
+);
 
 
-const NotificationsWithQuery = () => (
+const NotificationsWithQuery = (props) => (
   <StaticQuery
     query={graphql`
       query {
@@ -74,7 +74,7 @@ const NotificationsWithQuery = () => (
         }
       }
     `}
-    render={data => (<Notifications notifications={
+    render={data => (<Notifications title={props.title} notifications={
       data.allMarkdownRemark.nodes.map(node =>
         ({
           content: node.html,

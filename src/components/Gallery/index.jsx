@@ -17,10 +17,10 @@ const StyledH2 = styled.h2`
 `;
 
 
-export const Gallery = ({ images }) => {
+export const Gallery = ({ title, images }) => {
   return (
     <>
-      <StyledH2>Gallery</StyledH2>
+      <StyledH2>{title}</StyledH2>
       {
         images.map(image => <Image key={image.title} image={image.image} />)
       }
@@ -28,7 +28,7 @@ export const Gallery = ({ images }) => {
 };
 
 
-const GalleryWithQuery = () => (
+const GalleryWithQuery = (props) => (
   <StaticQuery
     query={graphql`
       query {
@@ -52,7 +52,7 @@ const GalleryWithQuery = () => (
         }
       }
     `}
-    render={data => (<Gallery images={
+    render={data => (<Gallery title={props.title} images={
       data.allMarkdownRemark.nodes.map(node => 
         ({
           title: node.frontmatter.title,

@@ -138,6 +138,28 @@ collections:
   - name: "pages"
     label: "Pages"
     files:
+      - file: "src/pages/obavijesti/index.md"
+        label: "Notifications Page"
+        name: "notifications-page"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "notifications-page",
+            }
+          - { label: Title, name: title, widget: string }
+      - file: "src/pages/aktivnosti/index.md"
+        label: "Activities Page"
+        name: "activities-page"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "activities-page",
+            }
+          - { label: Title, name: title, widget: string }
       - file: "src/pages/index.md"
         label: "Landing Page"
         name: "index"
@@ -148,6 +170,9 @@ collections:
               widget: "hidden",
               default: "index-page",
             }
+          - { label: "Notifications title", name: notificationsTitle, widget: string }
+          - { label: "Activities title", name: activitiesTitle, widget: string }
+          - { label: "Gallery title", name: galleryTitle, widget: string }
       - file: "src/pages/kontakt/index.md"
         label: "Contact Page"
         name: "contact"

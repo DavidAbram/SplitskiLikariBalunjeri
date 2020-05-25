@@ -15,9 +15,9 @@ const StyledH2 = styled.h2`
 `;
 
 
-export const Activities = ({ activities }) => (
+export const Activities = ({ title, activities }) => (
   <div style={{ marginBottom: '50px' }}>
-    <StyledH2>Activities</StyledH2>
+    <StyledH2>{title}</StyledH2>
     {activities.map((
       {title, date, content, url}) => 
         <Activity 
@@ -33,7 +33,7 @@ export const Activities = ({ activities }) => (
 )
 
 
-const ActivitiesWithQuery = () => (
+const ActivitiesWithQuery = (props) => (
   <StaticQuery
     query={graphql`
       query {
@@ -51,7 +51,7 @@ const ActivitiesWithQuery = () => (
         }
       }
     `}
-    render={data => (<Activities activities={
+    render={data => (<Activities title={props.title} activities={
       data.allMarkdownRemark.nodes.map(node => 
         ({ 
           content: node.html,
