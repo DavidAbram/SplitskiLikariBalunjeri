@@ -138,6 +138,28 @@ collections:
   - name: "pages"
     label: "Pages"
     files:
+      - file: "src/pages/notifications/index.md"
+        label: "Notifications Page"
+        name: "notifications-page"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "notifications-page",
+            }
+          - { label: Title, name: title, widget: string }
+      - file: "src/pages/activities/index.md"
+        label: "Activities Page"
+        name: "activities-page"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "activities-page",
+            }
+          - { label: Title, name: title, widget: string }
       - file: "src/pages/index.md"
         label: "Landing Page"
         name: "index"
