@@ -3,7 +3,7 @@ import { device } from '../styles';
 
 const NotificationWrapper = styled.div`
   position: relative;
- 
+  width: 100%;
 
 `;
 
