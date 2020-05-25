@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components';
 import { StaticQuery, graphql } from 'gatsby';
 import PreviewCompatibleImage from '../PreviewCompatibleImage'
 
@@ -9,27 +10,56 @@ export const titles = {
   liquidator: "Likvidator Udruge",
 }
 
+const StyledMemberWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 400px;
+  margin: 10px auto;
+
+  span {
+    padding: 0 20px;
+    flex-grow: 1;
+  }
+
+  &:nth-child(2) span,
+  &:nth-child(6) span,
+  &:nth-child(8) span,
+  &:nth-child(11) span {
+    
+  }
+
+  &:nth-child(2n + 1) span,  &:nth-child(12) span {
+    order: 2;
+  }
+  &:nth-child(5) span{
+    order: 0;
+  }
+`;
+
 export const Member = ({name, position, image}) => (
-  <>
-    {name}
+  <StyledMemberWrapper className="member">
+    <span>
+      {name}
+    </span>
     <PreviewCompatibleImage
       height="128px"
       width="128px"
       src={image}
       alt={`${position} ${name}`}
     />
-  </>
+  </StyledMemberWrapper>
 );
 
 export const Members = ({ members }) => {
 
   return (
     <div>
-      <h2>Članovi</h2>
+      <h2 style={{maxWidth: '400px', margin: '40px auto 5px auto'}}>Članovi</h2>
       {
         Object.values(titles).map((title, index) => (
           <>
-          <h3 key={title}>{title}</h3>
+          <h3 style={{maxWidth: '400px', margin: '40px auto 5px auto'}} key={title}>{title}</h3>
           {
             members
             .filter(

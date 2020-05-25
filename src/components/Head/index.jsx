@@ -154,6 +154,14 @@ const Head = ({
           color: ${colors.black};
           font-family: 'Roboto', sans-serif;
         }
+        ul { list-style: none}
+        li::before {
+          content: "•";
+          color: red;
+          display: inline-block;
+          width: 1em;
+          margin-left: -1em
+        }
       `}
       </style>
     </Helmet>

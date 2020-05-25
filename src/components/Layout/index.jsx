@@ -7,6 +7,7 @@ import Footer from '../Footer';
 
 const StyledSection = styled.section`
   ${font.fluidSize(16, 18, `'Roboto', sans-serif`)}
+  box-sizing: border-box;
   flex-grow: 1;
   line-height: 1.5;
   margin: 0 auto;
