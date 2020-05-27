@@ -37,7 +37,7 @@ const ActivitiesWithQuery = (props) => (
   <StaticQuery
     query={graphql`
       query {
-        allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "activity"}}}) {
+        allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "activity"}}}, sort: {fields: frontmatter___date, order: DESC}) {
           nodes {
             html
             frontmatter {

@@ -60,7 +60,7 @@ const NotificationsWithQuery = (props) => (
   <StaticQuery
     query={graphql`
       query {
-        allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "notification"}}}) {
+        allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "notification"}}}, sort: {fields: frontmatter___date, order: DESC}) {
           nodes {
             html
             frontmatter {

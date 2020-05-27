@@ -41,7 +41,7 @@ export default Gallery;
 
 export const pageQuery = graphql`
   query GalleryPageTemplate {
-    markdownRemark(frontmatter: { templateKey: { eq: "activity" } }) {
+    markdownRemark(frontmatter: { templateKey: { eq: "gallery-page" } }) {
       frontmatter {
         title
       }

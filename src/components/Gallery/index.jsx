@@ -32,7 +32,7 @@ const GalleryWithQuery = (props) => (
   <StaticQuery
     query={graphql`
       query {
-        allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "image-gallery"}}} ) {
+        allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "image-gallery"}}}, sort: {fields: frontmatter___date, order: DESC} ) {
           nodes {
             frontmatter {
               title

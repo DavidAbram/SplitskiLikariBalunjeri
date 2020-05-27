@@ -6,7 +6,7 @@ const GalleryLimit3 = (props) => (
   <StaticQuery
     query={graphql`
       query {
-        allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "image-gallery"}}}, limit: 3 ) {
+        allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "image-gallery"}}}, limit: 3, sort: {fields: frontmatter___date, order: DESC} ) {
           nodes {
             frontmatter {
               title
