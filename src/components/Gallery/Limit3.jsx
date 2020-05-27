@@ -1,38 +1,12 @@
 import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
-import styled from 'styled-components';
-import { colors, font } from '../styles';
-import PreviewCompatibleImage from '../PreviewCompatibleImage';
+import { Gallery } from './';
 
-
-export const Image = ({ image }) => <PreviewCompatibleImage width="100%" {...image} /> 
-;
-
-const StyledH2 = styled.h2`
-  ${font.fluidSize(18,24, font.family)}
-  font-weight: 700;
-  color: ${colors.primaryDark};
-  padding-bottom: 10px;
-  border-bottom: 3px solid ${colors.primaryDark};
-`;
-
-
-export const Gallery = ({ title, images }) => {
-  return (
-    <>
-      <StyledH2>{title}</StyledH2>
-      {
-        images.map(image => <Image key={image.title} image={image.image} />)
-      }
-    </>);
-};
-
-
-const GalleryWithQuery = (props) => (
+const GalleryLimit3 = (props) => (
   <StaticQuery
     query={graphql`
       query {
-        allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "image-gallery"}}} ) {
+        allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "image-gallery"}}}, limit: 3 ) {
           nodes {
             frontmatter {
               title
@@ -64,4 +38,4 @@ const GalleryWithQuery = (props) => (
   />
 );
 
-export default GalleryWithQuery;
+export default GalleryLimit3;

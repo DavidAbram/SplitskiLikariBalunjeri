@@ -138,6 +138,17 @@ collections:
   - name: "pages"
     label: "Pages"
     files:
+      - file: "src/pages/galerija/index.md"
+        label: "Gallery Page"
+        name: "gallery-page"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "gallery-page",
+            }
+          - { label: Title, name: title, widget: string }
       - file: "src/pages/obavijesti/index.md"
         label: "Notifications Page"
         name: "notifications-page"

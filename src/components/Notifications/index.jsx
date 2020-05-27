@@ -60,7 +60,7 @@ const NotificationsWithQuery = (props) => (
   <StaticQuery
     query={graphql`
       query {
-        allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "notification"}}}, limit: 3) {
+        allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "notification"}}}) {
           nodes {
             html
             frontmatter {
@@ -87,6 +87,5 @@ const NotificationsWithQuery = (props) => (
   />
 );
 
-
-export { default as Notification } from './Notification';
 export default NotificationsWithQuery;
+export { default as Notification } from './Notification';
