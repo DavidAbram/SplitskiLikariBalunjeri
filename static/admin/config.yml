@@ -14,7 +14,7 @@ public_folder: /img
 collections:
   - name: "image-gallery"
     label: "Image"
-    folder: "src/galleries/images"
+    folder: "src/posts/images"
     create: true
     slug: "{{slug}}-{{day}}-{{month}}-{{year}}"
     fields:
@@ -42,7 +42,7 @@ collections:
       }
   - name: "members-gallery"
     label: "Member"
-    folder: "src/galleries/members"
+    folder: "src/posts/members"
     create: true
     slug: "{{slug}}-{{day}}-{{month}}-{{year}}"
     fields:
@@ -107,7 +107,7 @@ collections:
           - { label: Logo, name: logo, widget: image }
   - name: "notifications"
     label: "Notification"
-    folder: "src/pages/obavijesti"
+    folder: "src/posts/obavijesti"
     create: true
     slug: "{{slug}}-{{day}}-{{month}}-{{year}}"
     fields:
@@ -122,7 +122,7 @@ collections:
       - { label: "Publish Date", name: "date", widget: "datetime" }
   - name: "activities"
     label: "Activity"
-    folder: "src/pages/aktivnosti"
+    folder: "src/posts/aktivnosti"
     create: true
     slug: "{{slug}}-{{day}}-{{month}}-{{year}}"
     fields:

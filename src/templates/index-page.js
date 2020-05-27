@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import Notifications from '../components/Notifications/Limit3';
 import Activities from '../components/Activities/Limit1';
 import Gallery from '../components/Gallery/Limit3';
-import { device, font, colors } from '../components/styles';
+import { device } from '../components/styles';
 
 const StyledWrapper = styled.div`
   display: flex;

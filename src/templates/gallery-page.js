@@ -2,10 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
-import Content, { HTMLContent } from '../components/Content';
 import GalleryComponent from '../components/Gallery';
 
-export const GalleryTemplate = ({
+export const GalleryPageTemplate = ({
   title,
 }) => (
   <GalleryComponent
@@ -13,7 +12,7 @@ export const GalleryTemplate = ({
   />
 );
 
-GalleryTemplate.propTypes = {
+GalleryPageTemplate.propTypes = {
   title: PropTypes.string,
 };
 
@@ -21,7 +20,7 @@ const Gallery = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
   return (
     <Layout>
-      <GalleryTemplate
+      <GalleryPageTemplate
         title={frontmatter.title}
       />
     </Layout>
@@ -41,7 +40,7 @@ Gallery.propTypes = {
 export default Gallery;
 
 export const pageQuery = graphql`
-  query GalleryTemplate {
+  query GalleryPageTemplate {
     markdownRemark(frontmatter: { templateKey: { eq: "activity" } }) {
       frontmatter {
         title
