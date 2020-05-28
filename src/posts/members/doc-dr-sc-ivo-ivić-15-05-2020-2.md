@@ -1,7 +1,7 @@
 ---
 templateKey: members
-title: Doc. dr. sc. Marko Markić
-position: member
+title: Fabijan Čukelj
+position: president
 image:
-  src: /img/3.png
+  src: /img/fabijan-čukelj.png
 ---
