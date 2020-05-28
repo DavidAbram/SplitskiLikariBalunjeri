@@ -1,7 +1,7 @@
 ---
 templateKey: members
-title: Doc. dr. sc. Ivo Ivić
-position: secretary
+title: Zoran Đogaš
+position: member
 image:
-  src: /img/2.png
+  src: /img/zoran-đogaš.jpg
 ---
