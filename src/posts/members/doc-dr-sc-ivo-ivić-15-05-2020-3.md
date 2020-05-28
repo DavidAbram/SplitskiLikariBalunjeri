@@ -1,7 +1,7 @@
 ---
 templateKey: members
-title: Doc. dr. sc. Mirko Mirkić
+title: Marin Popović
 position: member
 image:
-  src: /img/4.png
+  src: /img/marin-popović.png
 ---
