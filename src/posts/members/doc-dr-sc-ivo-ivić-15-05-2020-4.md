@@ -1,7 +1,7 @@
 ---
 templateKey: members
-title: Doc. dr. sc. Živko Živkić
+title: Trpimir Glavina
 position: member
 image:
-  src: /img/5.png
+  src: /img/9.png
 ---
