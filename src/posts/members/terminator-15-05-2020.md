@@ -1,7 +1,7 @@
 ---
 templateKey: members
-title: Terminator
+title: Marin Ivanišević
 position: liquidator
 image:
-  src: /img/11.png
+  src: /img/10.png
 ---
