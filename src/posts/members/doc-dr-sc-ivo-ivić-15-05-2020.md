@@ -1,9 +1,9 @@
 ---
 templateKey: members
 fullName: Ivo Ivić
-title: Doc. dr. sc. Ante Antić
-position: president
+title: Jakov Aranza
+position: member
 image:
-  src: /img/1.png
+  src: /img/6.png
   alt: Ivo Ivić
 ---
