@@ -1,7 +1,7 @@
 ---
 templateKey: members
-title: Doc. dr. sc. Branko Brankić
+title: Jure Aljinović
 position: member
 image:
-  src: /img/6.png
+  src: /img/19.png
 ---
