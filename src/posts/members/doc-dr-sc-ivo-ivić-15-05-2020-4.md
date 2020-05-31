@@ -3,5 +3,5 @@ templateKey: members
 title: Trpimir Glavina
 position: member
 image:
-  src: /img/9.png
+  src: /img/trpimir-glavina-9.png
 ---
