@@ -15,36 +15,49 @@ const StyledH2 = styled.h2`
 `;
 
 const StyledDiv = styled.div`
-  max-width: 850px;
-  flex-basis: calc(70% - 30px);
-  width: calc(70% - 30px);
+  max-width: 100%;
 
   .notification {
-    ${NotificationLandingStyles}
+    margin-bottom: 40px;
   }
 
-  @media ${device.tablet} {
-    min-width: 600px;
-    flex-grow: 1;
+  ${
+  (props) => props.isLanding ? `
+    max-width: 850px;
     flex-basis: calc(70% - 30px);
     width: calc(70% - 30px);
-    margin-right: 30px;
+
+    .notification {
+      ${NotificationLandingStyles}
+    }
+
+
+    @media ${ device.tablet} {
+      min-width: 600px;
+      flex-grow: 1;
+      flex-basis: calc(70% - 30px);
+      width: calc(70% - 30px);
+      margin-light: 30px;
+    }
+
+    @media ${ device.mobile} {
+      flex-basis: 100%;
+      width: 100%;
+    }
+    ` : ''
   }
 
-  @media ${device.mobile} {
-    flex-basis: 100%;
-    width: 100%;
-  }
+
 
 `
 
-export const Notifications = ({ title, notifications }) => (
-  <StyledDiv>
+export const Notifications = ({ title, notifications, isLanding = true }) => (
+  <StyledDiv isLanding={isLanding}>
     <StyledH2>{title}</StyledH2>
     {notifications.map((
       { title, date, content, url }) =>
       <Notification
-        key={`${title}-${date}`}
+        key={`${title} -${date} `}
         PageContent={HTMLContent}
         title={title}
         date={date}
@@ -59,22 +72,22 @@ export const Notifications = ({ title, notifications }) => (
 const NotificationsWithQuery = (props) => (
   <StaticQuery
     query={graphql`
-      query {
-        allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "notification"}}}, sort: {fields: frontmatter___date, order: DESC}) {
-          nodes {
-            html
-            frontmatter {
-              title
-              date
-            }
-            fields {
-              slug
-            }
-          }
-        }
+query {
+  allMarkdownRemark(filter: { frontmatter: { templateKey: { eq: "notification" } } }, sort: { fields: frontmatter___date, order: DESC }) {
+    nodes {
+      html
+      frontmatter {
+        title
+        date
       }
-    `}
-    render={data => (<Notifications title={props.title} notifications={
+      fields {
+        slug
+      }
+    }
+  }
+}
+`}
+    render={data => (<Notifications isLanding={props.isLanding} title={props.title} notifications={
       data.allMarkdownRemark.nodes.map(node =>
         ({
           content: node.html,

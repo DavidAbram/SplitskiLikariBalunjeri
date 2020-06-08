@@ -7,7 +7,7 @@ import Notifications from '../components/Notifications';
 export const NotificationsPageTemplate = ({
   title,
 }) => (
-    <Notifications title={title} />
+    <Notifications title={title} isLanding={false} />
 );
 
 NotificationsPageTemplate.propTypes = {

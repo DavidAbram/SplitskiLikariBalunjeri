@@ -15,18 +15,18 @@ const BackgroundImage = styled.div`
 
 
   @media (min-width: 1200px) and (max-width: 1800px) {
-    background-position: top 50% right 75%;
+    background-position: top 50% right 50%;
     background-size: auto 300px;
   }
 
 
   @media ${device.tablet} {
-    background-position: top 50% right 75%;
+    background-position: top 50% right 50%;
   }
 
 
   @media (min-width: 601px) and (max-width: 792px) {
-    background-position: top 50% right 60%;
+    background-position: top 50% right 45%;
     background-size: auto 300px;
   }
 

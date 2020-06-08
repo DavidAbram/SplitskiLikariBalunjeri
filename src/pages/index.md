@@ -1,7 +1,7 @@
 ---
 templateKey: index-page
 title: Index
-notificationsTitle: Notifikacije
+notificationsTitle: Obavijesti
 activitiesTitle: Aktivnosti
 galleryTitle: Galerija
 ---
