@@ -66,10 +66,10 @@ const Navigation = () => (
     <Link to="/kontakt">
       Kontakt
     </Link>
-    <Link to="/kontakt">
+    <Link to="/obavijesti">
       Obavijesti
     </Link>
-    <Link to="/kontakt">
+    <Link to="/galerija">
       Galerija
     </Link>
   </StyledNavigation>
