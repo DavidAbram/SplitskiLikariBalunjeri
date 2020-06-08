@@ -2,14 +2,20 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
+const StyledDiv = styled.div`
+  & img {
+    max-width: 100%;
+  }
+`;
+
 export const HTMLContent = ({ children, style = {} , className = '' }) => {
   return (
-    <div style={style} className={className} dangerouslySetInnerHTML={{ __html: children }} />
+    <StyledDiv style={style} className={className} dangerouslySetInnerHTML={{ __html: children }} />
   )
 }
 
 const Content = ({ children, style = {} , className = ''}) => (
-  <div style={style} className={className} >{children}</div>
+  <StyledDiv style={style} className={className} >{children}</StyledDiv>
 )
 
 Content.propTypes = {
