@@ -2,9 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Img from 'gatsby-image'
 
-const PreviewCompatibleImage = ({ src, alt, height, width, maxHeight, maxWidth }) => {
+const PreviewCompatibleImage = ({ src, alt, height, width, maxHeight, maxWidth, style }) => {
 
   const wrapStyle = {
+    ...style,
     width: `${width}`,
     height: `${height}`,
     maxHeight: `${maxHeight}`,

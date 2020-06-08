@@ -43,6 +43,7 @@ export const Member = ({name, position, image}) => (
       {name}
     </span>
     <PreviewCompatibleImage
+      style={{ borderRadius: '50%'}}
       height="128px"
       width="128px"
       src={image}
