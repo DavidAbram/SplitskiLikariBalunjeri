@@ -23,24 +23,11 @@ const StyledMemberWrapper = styled.div`
     flex-grow: 1;
   }
 
-  &:nth-child(2) span,
-  &:nth-child(6) span,
-  &:nth-child(8) span,
-  &:nth-child(11) span {
-    
-  }
-
-  &:nth-child(2n + 1) span,  &:nth-child(12) span {
-    order: 2;
-  }
-  &:nth-child(5) span{
-    order: 0;
-  }
 `;
 
-export const Member = ({ name, position, image }) => (
+export const Member = ({ name, position, image, isRight }) => (
   <StyledMemberWrapper className="member">
-    <span>
+    <span style={isRight ? { order: 2 } : { order: 0 }}>
       {name}
     </span>
     <PreviewCompatibleImage
@@ -54,30 +41,41 @@ export const Member = ({ name, position, image }) => (
 );
 
 export const Members = ({ members }) => {
-
+  let previousMemberCount = 0;
   return (
     <div>
       <h2 style={{ maxWidth: '400px', margin: '40px auto 5px auto' }}>Članovi</h2>
       {
         Object.values(titles).map((title, index) => {
-          if (members
-            .filter(
-              member => member.position === Object.keys(titles)[index]
-            ).length === 0) return null;
-            return (
-              <React.Fragment key={title}>
-                <h3 style={{ maxWidth: '400px', margin: '40px auto 5px auto' }} >{title}</h3>
-                {
-                  members
-                    .filter(
-                      member => member.position === Object.keys(titles)[index]
-                    )
-                    .map(
-                      member => <Member key={`${title}-${member.name}`} image={member.image} name={member.name} position={member.position} />
-                    )
-                }
-              </React.Fragment>
-            )
+            if (index !== 0){
+              previousMemberCount += members.filter(member => member.position === Object.keys(titles)[index - 1]).length;
+            }
+            console.log(previousMemberCount)
+            if (members
+              .filter(
+                member => member.position === Object.keys(titles)[index]
+              ).length === 0) return null;
+          return (
+            <React.Fragment key={title}>
+              <h3 style={{ maxWidth: '400px', margin: '40px auto 5px auto' }} >{title}</h3>
+              {
+                members
+                  .filter(
+                    member => member.position === Object.keys(titles)[index]
+                  )
+                  .map(
+                    (member, memberIndex) => (
+                      <Member
+                        key={`${title}-${member.name}`}
+                        image={member.image}
+                        name={member.name}
+                        position={member.position}
+                        isRight={ ((previousMemberCount + memberIndex + 1) % 2 === 0) ? false : true}
+                      />)
+                  )
+              }
+            </React.Fragment>
+          )
         }).filter(result => result !== null)
       }
     </div>
