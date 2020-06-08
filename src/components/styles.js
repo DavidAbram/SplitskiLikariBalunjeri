@@ -1,4 +1,4 @@
-const sizes = {
+export const sizes = {
   mobile: {
     minimum: '320px',
     maximum: '600px',

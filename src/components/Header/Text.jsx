@@ -13,12 +13,12 @@ h1, h6 {
   margin: 0;
 }
 h1 {
-  ${font.fluidSize(32, 60, font.family)}
+  ${font.fluidSize(32, 56, font.family)}
   font-weight: 700;
   margin-bottom: 30px;
 }
 h6 {
-  ${font.fluidSize(18, 28, font.family)}
+  ${font.fluidSize(18, 24, font.family)}
   font-weight: 400;
   letter-spacing: 1.25px;
 }

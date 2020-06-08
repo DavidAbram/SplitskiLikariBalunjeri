@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
-import { colors, font, device } from '../styles';
+import { colors, font, device, sizes } from '../styles';
 
 const StyledNavigation = styled.nav`
   ${font.fluidSize(16, 20, font.family)}
@@ -13,8 +13,11 @@ const StyledNavigation = styled.nav`
   max-width: calc(100% - 200px - 20px);
   position: absolute;
   top: calc(100% - 10px);
-  width: 450px;
+  width: 900px;
+
+  left: 15px;
   a {
+    flex-grow: 1;
     color: inherit;
     text-decoration: none;
 
@@ -23,8 +26,16 @@ const StyledNavigation = styled.nav`
     }
   }
 
+  @media (min-width: ${sizes.mobile.minimum}) and (max-width: 1300px) {
+    flex-wrap: wrap;
+    left: 15px;
+    max-width: 100%;
+    width: 630px;
+  }
+
 
   @media ${device.mobile} {
+      flex-wrap: wrap;
       flex-basis: 100%;
       left: 0;
       max-width: 100%;
@@ -33,6 +44,8 @@ const StyledNavigation = styled.nav`
       top: -1px;
       margin-top: -10px;
       a {
+        flex-basis: 33%;
+        text-align: center;
         padding: 10px 0;
       }
   }
@@ -52,6 +65,12 @@ const Navigation = () => (
     </Link>
     <Link to="/kontakt">
       Kontakt
+    </Link>
+    <Link to="/kontakt">
+      Obavijesti
+    </Link>
+    <Link to="/kontakt">
+      Galerija
     </Link>
   </StyledNavigation>
 )

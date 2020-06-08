@@ -1,12 +1,12 @@
 import styled from 'styled-components';
-import { device } from '../styles';
+import { device, size } from '../styles';
 
 const Wrapper = styled.div`
   align-items: center;
   display: flex;
   justify-content: flex-start;
   margin: 30px auto;
-  max-width: 1400px;
+  max-width: 1200px;
   padding-bottom: 30px;
   position: relative;
   width: 90vw;
