@@ -4,7 +4,7 @@ import { device } from '../styles';
 const BackgroundImage = styled.div`
   background-image:  ${props => `url(${props.url})`};
   background-position: top 50% right 0%;
-  background-size: 1600px 300px;
+  background-size: 1920px 300px;
   height: ${props =>  `${props.height || 300}px`};
   left: 0;
   opacity: 0.9;
