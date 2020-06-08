@@ -1,7 +1,7 @@
 ---
 templateKey: members
 title: Trpimir Glavina
-position: member
+position: boardMember
 image:
   src: /img/trpimir-glavina-9.png
 ---

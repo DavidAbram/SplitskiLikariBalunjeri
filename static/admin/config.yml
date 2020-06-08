@@ -61,7 +61,8 @@ collections:
             [
               { label: "Predsjednik Udruge", value: "president" },
               { label: "Tajnik Udruge", value: "secretary" },
-              { label: "Članovi Upravnog Odbora", value: "member" },
+              { label: "Član Upravnog Odbora", value: "boardMember" },
+              { label: "Član Udruge", value: "member" },
               { label: "Likvidator Udruge", value: "liquidator" }
             ]
         }

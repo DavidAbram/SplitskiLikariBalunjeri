@@ -1,7 +1,7 @@
 ---
 templateKey: members
 title: Jure Aljinović
-position: member
+position: boardMember
 image:
   src: /img/19.png
 ---

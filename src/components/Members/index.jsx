@@ -6,7 +6,8 @@ import PreviewCompatibleImage from '../PreviewCompatibleImage'
 export const titles = {
   president: "Predsjednik Udruge",
   secretary: "Tajnik Udruge",
-  member: "Članovi Upravnog Odbora",
+  boardMember: "Članovi Upravnog Odbora",
+  member: "Članovi Udruge",
   liquidator: "Likvidator Udruge",
 }
 
@@ -37,13 +38,13 @@ const StyledMemberWrapper = styled.div`
   }
 `;
 
-export const Member = ({name, position, image}) => (
+export const Member = ({ name, position, image }) => (
   <StyledMemberWrapper className="member">
     <span>
       {name}
     </span>
     <PreviewCompatibleImage
-      style={{ borderRadius: '50%'}}
+      style={{ borderRadius: '50%' }}
       height="128px"
       width="128px"
       src={image}
@@ -56,22 +57,28 @@ export const Members = ({ members }) => {
 
   return (
     <div>
-      <h2 style={{maxWidth: '400px', margin: '40px auto 5px auto'}}>Članovi</h2>
+      <h2 style={{ maxWidth: '400px', margin: '40px auto 5px auto' }}>Članovi</h2>
       {
-        Object.values(titles).map((title, index) => (
-          <>
-          <h3 style={{maxWidth: '400px', margin: '40px auto 5px auto'}} key={title}>{title}</h3>
-          {
-            members
+        Object.values(titles).map((title, index) => {
+          if (members
             .filter(
               member => member.position === Object.keys(titles)[index]
+            ).length === 0) return null;
+            return (
+              <React.Fragment key={title}>
+                <h3 style={{ maxWidth: '400px', margin: '40px auto 5px auto' }} >{title}</h3>
+                {
+                  members
+                    .filter(
+                      member => member.position === Object.keys(titles)[index]
+                    )
+                    .map(
+                      member => <Member key={`${title}-${member.name}`} image={member.image} name={member.name} position={member.position} />
+                    )
+                }
+              </React.Fragment>
             )
-            .map(
-              member => <Member key={`${title}-${member.name}`} image={member.image} name={member.name} position={member.position} />
-              )
-          }
-          </>
-        ))
+        }).filter(result => result !== null)
       }
     </div>
   )
@@ -102,13 +109,13 @@ const MembersWithQuery = () => (
       }
     `}
     render={data => (<Members members={
-      data.allMarkdownRemark.nodes.map(node => 
+      data.allMarkdownRemark.nodes.map(node =>
         ({
           name: node.frontmatter.title,
           position: node.frontmatter.position,
           image: node.frontmatter.image.src,
         })
-      )} 
+      )}
     />)}
   />
 );
