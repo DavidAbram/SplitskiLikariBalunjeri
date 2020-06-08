@@ -18,7 +18,7 @@ export const Header = ({ title, subtitle, logo, hero, heroHeight }) => {
       <BackgroundImage height={heroHeight} url={hero} />
       <Wrapper>
         <Link to="/" style={{ textDecoration: 'none' }}>
-          <PreviewCompatibleImage height="200px" width="200px" src={logo} alt={'logo'} />
+          <PreviewCompatibleImage height="167px" width="200px" src={'/img/animirani-logo-slb.gif'} alt={'logo'} />
         </Link>
         <Link to="/" style={{ textDecoration: 'none' }}>
           <Text>
@@ -42,8 +42,9 @@ export default () => (
           subtitle
           logo {
             childImageSharp {
-              fluid(maxWidth: 200, quality: 100) {
-                ...GatsbyImageSharpFluid
+              original {
+                src
+                height
               }
             }
           }
