@@ -1,7 +1,7 @@
 ---
 templateKey: members
-title: Branko Granić
+title: Ante Pojatina
 position: member
 image:
-  src: /img/branko-granić-18.png
+  src: /img/ante-pojatina-24.png
 ---
