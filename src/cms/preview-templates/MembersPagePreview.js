@@ -7,7 +7,7 @@ const MembersPagePreview = ({ entry, widgetFor, getAsset }) => {
 
   if (data) {
     return (
-      <MembersPageTemplate content={widgetFor('body')} title={data.title} />
+      <MembersPageTemplate  membersTitle={data.membersTitle} content={widgetFor('body')} title={data.title} />
     );
   } else {
     return <div>Loading...</div>;

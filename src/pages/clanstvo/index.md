@@ -1,6 +1,7 @@
 ---
 templateKey: members-page
 title: Članstvo
+membersTitle: Članovi
 ---
 Članovi u **Udruzi** mogu biti redoviti i pridruženi.  
   

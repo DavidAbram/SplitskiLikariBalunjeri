@@ -40,11 +40,13 @@ export const Member = ({ name, position, image, isRight }) => (
   </StyledMemberWrapper>
 );
 
-export const Members = ({ members }) => {
+export const Members = ({ members, title }) => {
   let previousMemberCount = 0;
   return (
     <div>
-      <h2 style={{ maxWidth: '400px', margin: '40px auto 5px auto' }}>Članovi</h2>
+      <h2 style={{ maxWidth: '400px', margin: '40px auto 5px auto' }}>
+        { title || "Članovi"}
+      </h2>
       {
         Object.values(titles).map((title, index) => {
             if (index !== 0){
@@ -83,7 +85,7 @@ export const Members = ({ members }) => {
 };
 
 
-const MembersWithQuery = () => (
+const MembersWithQuery = ({title}) => (
   <StaticQuery
     query={graphql`
       query {
@@ -106,7 +108,7 @@ const MembersWithQuery = () => (
         }
       }
     `}
-    render={data => (<Members members={
+    render={data => (<Members title={title} members={
       data.allMarkdownRemark.nodes.map(node =>
         ({
           name: node.frontmatter.title,

@@ -1,6 +1,7 @@
 ---
 templateKey: about-page
 title: O udruzi
+membersTitle: Uprava Udruge
 ---
 ### Udruga je osnovana s ciljem:  
 

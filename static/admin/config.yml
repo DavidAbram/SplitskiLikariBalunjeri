@@ -209,6 +209,7 @@ collections:
             }
           - { label: Title, name: title, widget: string }
           - { label: "Body", name: "body", widget: "markdown" }
+          - { label: "Members Title", name: membersTitle, widget: string }
       - file: "src/pages/misija-i-vizija/index.md"
         label: "Vision Page"
         name: "vision"
@@ -247,3 +248,4 @@ collections:
             }
           - { label: Title, name: title, widget: string }
           - { label: "Body", name: "body", widget: "markdown" }
+          - { label: "Members Title", name: membersTitle, widget: string }

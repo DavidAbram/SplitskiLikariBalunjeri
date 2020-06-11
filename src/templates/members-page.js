@@ -67,6 +67,7 @@ const LeftSideDiv = styled.div`
 
 export const MembersPageTemplate = ({
   title,
+  membersTitle,
   content,
   PageContent = Content,
 }) => (
@@ -76,7 +77,7 @@ export const MembersPageTemplate = ({
         <PageContent>{content}</PageContent>
       </LeftSideDiv>
       <StyledDiv>
-        <Members />
+        <Members title={membersTitle}/>
       </StyledDiv>
     </StyledWrapper>
   );
@@ -95,6 +96,7 @@ const MembersPage = ({ data }) => {
         title={frontmatter.title}
         content={html}
         PageContent={HTMLContent}
+        membersTitle={frontmatter.membersTitle}
       />
     </Layout>
   );
@@ -117,6 +119,7 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
+        membersTitle
       }
     }
   }

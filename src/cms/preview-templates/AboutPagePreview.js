@@ -6,7 +6,7 @@ const AboutPagePreview = ({ entry, getAsset, widgetFor }) => {
   const data = entry.getIn(['data']).toJS();
 
   if (data) {
-    return <AboutPageTemplate content={widgetFor('body')} title={data.title} />;
+    return <AboutPageTemplate membersTitle={data.membersTitle} content={widgetFor('body')} title={data.title} />;
   } else {
     return <div>Loading...</div>;
   }
