@@ -4,7 +4,7 @@ import Announcement from '../Announcement';
 import NotificationWrapper from './NotificationWrapper';
 
 
-const Notification = ({ title, date, content, url, PageContent = Content }) => (
+const Notification = ({ title, date, content, url, PageContent = Content, excerpt }) => (
   <Announcement
     title={title}
     content={content}
@@ -13,6 +13,7 @@ const Notification = ({ title, date, content, url, PageContent = Content }) => (
     PageContent={PageContent}
     Wrapper={NotificationWrapper}
     className="notification"
+    excerpt={excerpt}
   />
 );
 

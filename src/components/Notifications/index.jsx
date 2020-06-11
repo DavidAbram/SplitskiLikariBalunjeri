@@ -55,13 +55,14 @@ export const Notifications = ({ title, notifications, isLanding = true }) => (
   <StyledDiv isLanding={isLanding}>
     <StyledH2>{title}</StyledH2>
     {notifications.map((
-      { title, date, content, url }) =>
+      { title, date, content, url, excerpt }) =>
       <Notification
-        key={`${title} -${date} `}
+        key={`${title}-${date} `}
         PageContent={HTMLContent}
         title={title}
         date={date}
         content={content}
+        excerpt={excerpt}
         url={url}
       />
     )}
@@ -83,6 +84,7 @@ query {
       fields {
         slug
       }
+      excerpt(pruneLength: 500, format: HTML)
     }
   }
 }
@@ -94,6 +96,7 @@ query {
           title: node.frontmatter.title,
           date: node.frontmatter.date,
           url: node.fields.slug,
+          excerpt: node.excerpt,
         })
       )}
     />)}

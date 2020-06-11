@@ -16,6 +16,7 @@ const NotificationsWithQuery = (props) => (
             fields {
               slug
             }
+            excerpt(pruneLength: 500, format: HTML)
           }
         }
       }
@@ -27,6 +28,7 @@ const NotificationsWithQuery = (props) => (
           title: node.frontmatter.title,
           date: node.frontmatter.date,
           url: node.fields.slug,
+          excerpt: node.excerpt,
         })
       )}
     />)}

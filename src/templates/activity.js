@@ -33,11 +33,10 @@ const Activities = ({ data }) => {
   return (
     <Layout>
       <ActivitiesTemplate
-        title={frontmatter.title}
+        PageContent={HTMLContent}
         content={html}
         date={frontmatter.date}
-        url={fields.slug}
-        PageContent={HTMLContent}
+        title={frontmatter.title}
       />
     </Layout>
   );
@@ -56,8 +55,8 @@ Activities.propTypes = {
 export default Activities;
 
 export const pageQuery = graphql`
-  query ActivitiesTemplate {
-    markdownRemark(frontmatter: { templateKey: { eq: "activity" } }) {
+  query ActivitiesTemplate($id: String!) {
+    markdownRemark(id: { eq: $id },frontmatter: { templateKey: { eq: "activity" } }) {
       html
       frontmatter {
         title

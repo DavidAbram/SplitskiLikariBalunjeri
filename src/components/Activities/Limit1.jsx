@@ -16,6 +16,7 @@ const ActivitiesWithQuery = (props) => (
             fields {
               slug
             }
+            excerpt(pruneLength: 500, format: HTML)
           }
         }
       }
@@ -26,7 +27,8 @@ const ActivitiesWithQuery = (props) => (
           content: node.html,
           title: node.frontmatter.title,
           date: node.frontmatter.date,
-          url: node.fields.slug
+          url: node.fields.slug,
+          excerpt: node.excerpt,
         })
       )} 
     />)}

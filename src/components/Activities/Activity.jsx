@@ -5,7 +5,7 @@ import Announcement from '../Announcement';
 
 const ActivityWrapper = ({ children, ...other }) => <div {...other}>{children} </div>
 
-export const Activity = ({title, date, content, url, PageContent = Content}) => (
+export const Activity = ({title, date, content, url, PageContent = Content, excerpt}) => (
   <Announcement
     className="activity"
     title={title}
@@ -13,6 +13,7 @@ export const Activity = ({title, date, content, url, PageContent = Content}) => 
     url={url}
     date={date}
     PageContent={PageContent}
+    excerpt={excerpt}
     Wrapper={ActivityWrapper}
   />
 );

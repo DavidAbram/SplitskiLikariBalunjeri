@@ -14,6 +14,15 @@ const StyledDiv = styled.div`
   a {
     color: ${colors.black2};
   }
+  button {
+    color: ${colors.black2};
+    background: transparent;
+    border:none;
+    font-size: 18px;
+    text-decoration: underline;
+    outline: none;
+    padding-left: 0;
+  }
 `;
 
 const AnnouncementTitle = styled.div`
@@ -39,14 +48,22 @@ export const Announcement = ({
   url,
   PageContent = Content,
   className = '',
+  excerpt,
 }) => (
   <Wrapper className={className}>
     <AnnouncementTitle>{title}</AnnouncementTitle>
-    <PageContent style={{ textAlign: 'justify'}}>{content}</PageContent>
+    <PageContent style={{ textAlign: 'justify'}}>{excerpt || content}</PageContent>
     <StyledDiv>
-      <Link to={url}>{!url ? 'Odi natrag' : 'Pročitaj više'}</Link>
+      {
+        url && <Link to={url}>Pročitaj više</Link>
+      }
+      {
+        !url && <button onClick={() => window.history.back()}>
+          Idi natrag
+        </button>
+      }
       <div>{new Date(date).toLocaleDateString('hr-HR',options)}</div>
-    </StyledDiv>
+    </StyledDiv>    
   </Wrapper>
 );
 

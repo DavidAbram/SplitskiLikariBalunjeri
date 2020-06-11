@@ -19,13 +19,14 @@ export const Activities = ({ title, activities }) => (
   <div style={{ marginBottom: '50px' }}>
     <StyledH2>{title}</StyledH2>
     {activities.map((
-      {title, date, content, url}) => 
+      {title, date, content, url, excerpt}) => 
         <Activity 
           key={`${title}-${date}`}
           PageContent={HTMLContent}
           title={title}
           date={date}
           content={content} 
+          excerpt={excerpt}
           url={url}
         />
       )}
@@ -47,6 +48,7 @@ const ActivitiesWithQuery = (props) => (
             fields {
               slug
             }
+            excerpt(pruneLength: 500, format: HTML)
           }
         }
       }
@@ -57,7 +59,8 @@ const ActivitiesWithQuery = (props) => (
           content: node.html,
           title: node.frontmatter.title,
           date: node.frontmatter.date,
-          url: node.fields.slug
+          url: node.fields.slug,
+          excerpt: node.excerpt,
         })
       )} 
     />)}

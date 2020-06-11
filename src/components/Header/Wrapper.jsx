@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { device, size } from '../styles';
+import { device } from '../styles';
 
 const Wrapper = styled.div`
   align-items: center;

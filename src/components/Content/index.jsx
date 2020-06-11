@@ -5,6 +5,8 @@ import PropTypes from 'prop-types';
 const StyledDiv = styled.div`
   & img {
     max-width: 100%;
+    display:block;
+    margin:auto;
   }
 `;
 
