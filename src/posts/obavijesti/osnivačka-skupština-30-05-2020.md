@@ -7,6 +7,8 @@ date: 2019-10-05T20:49:00.000Z
 
 ![](/img/img-20191005-wa0017.jpg "Prije glasovanja")
 
+![](/img/img-20191005-wa0021.jpg "Razrada strategije za Livno")
+
 <!--\\\[if gte mso 9]><xml>
  <o:OfficeDocumentSettings>
   <o:AllowPNG/>
