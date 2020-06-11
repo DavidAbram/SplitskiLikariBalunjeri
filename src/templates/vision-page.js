@@ -10,7 +10,7 @@ import PreviewCompatibleImage from '../components/PreviewCompatibleImage';
 const CenteredImageWrapper = styled.div`
   padding-top: 30px;
   margin: auto;
-  max-width: 900px;
+  max-width: 1000px;
   width: 100%;
 `;
 

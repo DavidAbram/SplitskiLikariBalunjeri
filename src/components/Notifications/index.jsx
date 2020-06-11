@@ -37,7 +37,7 @@ const StyledDiv = styled.div`
       flex-grow: 1;
       flex-basis: calc(70% - 30px);
       width: calc(70% - 30px);
-      margin-light: 30px;
+      margin-right: 30px;
     }
 
     @media ${ device.mobile} {

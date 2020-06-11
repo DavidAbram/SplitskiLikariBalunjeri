@@ -14,9 +14,16 @@ const StyledH2 = styled.h2`
   border-bottom: 3px solid ${colors.primaryDark};
 `;
 
+const StyledDiv = styled.div`
+  margin-bottom: 50px;
+  .activity {
+    margin-bottom: 40px;
+  }
+`
+
 
 export const Activities = ({ title, activities }) => (
-  <div style={{ marginBottom: '50px' }}>
+  <StyledDiv>
     <StyledH2>{title}</StyledH2>
     {activities.map((
       {title, date, content, url, excerpt}) => 
@@ -30,7 +37,7 @@ export const Activities = ({ title, activities }) => (
           url={url}
         />
       )}
-  </div>
+  </StyledDiv>
 )
 
 

@@ -26,7 +26,7 @@ const GalleryLimit3 = (props) => (
         }
       }
     `}
-    render={data => (<Gallery title={props.title} images={
+    render={data => (<Gallery isLanding={props.isLanding} title={props.title} images={
       data.allMarkdownRemark.nodes.map(node => 
         ({
           title: node.frontmatter.title,

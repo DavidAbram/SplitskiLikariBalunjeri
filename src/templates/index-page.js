@@ -50,7 +50,7 @@ export const IndexPageTemplate = (props) => (
     <Notifications title={props.notificationsTitle} />
     <StyledDiv>
       <Activities title={props.activitiesTitle} />
-      <Gallery title={props.galleryTitle}  />
+      <Gallery isLanding title={props.galleryTitle}  />
     </StyledDiv>
   </StyledWrapper>
 );

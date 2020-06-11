@@ -23,7 +23,13 @@ const StyledDiv = styled.div`
   justify-content: space-between;
 
   div {
-    flex-basis: calc(50% - 5px);
+    ${
+      (props) => 
+      props.isLanding ? `flex-basis: 100%;` : `
+        flex-basis: calc(50% - 5px);
+      `
+    }
+    
     p {
       margin-top: 0;
       text-align: center;
@@ -40,11 +46,11 @@ const StyledDiv = styled.div`
 
 
 
-export const Gallery = ({ title, images }) => {
+export const Gallery = ({ title, images, isLanding }) => {
   return (
     <>
       <StyledH2>{title}</StyledH2>
-      <StyledDiv>
+      <StyledDiv isLanding={isLanding}>
       {
         images.map((image, index) => 
         <div key={`${image.title}-${image.date}-${index}`} title={image.title}>
@@ -81,7 +87,7 @@ const GalleryWithQuery = (props) => (
         }
       }
     `}
-    render={data => (<Gallery title={props.title} images={
+    render={data => (<Gallery isLanding={props.isLanding} title={props.title} images={
       data.allMarkdownRemark.nodes.map(node => 
         ({
           title: node.frontmatter.title,

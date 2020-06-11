@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { StaticQuery, graphql } from 'gatsby';
-import PreviewCompatibleImage from '../PreviewCompatibleImage'
+import PreviewCompatibleImage from '../PreviewCompatibleImage';
+import { colors, font, device } from '../styles';
 
 export const titles = {
   president: "Predsjednik Udruge",
@@ -40,13 +41,22 @@ export const Member = ({ name, position, image, isRight }) => (
   </StyledMemberWrapper>
 );
 
+
+const StyledH2 = styled.h2`
+  ${font.fluidSize(18,24, font.family)}
+  font-weight: 700;
+  color: ${colors.primaryDark};
+  padding-bottom: 10px;
+  border-bottom: 3px solid ${colors.primaryDark};
+`;
+
 export const Members = ({ members, title }) => {
   let previousMemberCount = 0;
   return (
     <div>
-      <h2 style={{ maxWidth: '400px', margin: '40px auto 5px auto' }}>
+      <StyledH2 style={{ maxWidth: '400px' }}>
         { title || "Članovi"}
-      </h2>
+      </StyledH2>
       {
         Object.values(titles).map((title, index) => {
             if (index !== 0){
