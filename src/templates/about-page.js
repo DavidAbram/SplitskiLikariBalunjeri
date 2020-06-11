@@ -46,7 +46,7 @@ const StyledDiv = styled.div`
 `;
 
 const LeftSideDiv = styled.div`
-  max-width: 850px;
+  max-width: 900px;
   flex-basis: calc(70% - 30px);
   width: calc(70% - 30px);
 

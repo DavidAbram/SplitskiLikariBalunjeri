@@ -23,7 +23,7 @@ const StyledDiv = styled.div`
 
   ${
   (props) => props.isLanding ? `
-    max-width: 850px;
+    max-width: 900px;
     flex-basis: calc(70% - 30px);
     width: calc(70% - 30px);
 

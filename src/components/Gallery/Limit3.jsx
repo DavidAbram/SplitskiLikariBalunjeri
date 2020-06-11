@@ -32,6 +32,7 @@ const GalleryLimit3 = (props) => (
           title: node.frontmatter.title,
           date: node.frontmatter.date,
           image: node.frontmatter.image,
+          alt: node.frontmatter.alt,
         })
       )} 
     />)}

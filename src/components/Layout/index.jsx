@@ -11,7 +11,7 @@ const StyledSection = styled.section`
   flex-grow: 1;
   line-height: 1.5;
   margin: 0 auto;
-  max-width: 1280px;
+  max-width: 1480px;
   padding: 20px 30px;
   width: 100%;
 
