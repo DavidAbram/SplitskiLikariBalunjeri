@@ -3,5 +3,5 @@ templateKey: members
 title: Marin Ivanišević
 position: liquidator
 image:
-  src: /img/10.png
+  src: /img/marin-ivanišević-10.png
 ---
