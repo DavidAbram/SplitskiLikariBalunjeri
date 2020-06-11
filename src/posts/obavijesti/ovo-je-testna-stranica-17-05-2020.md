@@ -1,10 +1,10 @@
 ---
 templateKey: notification
-title: Ovo je testna stranica
+title: Božićni domjenak
 date: 2020-05-17T18:17:26.950Z
 ---
-Di ste?
+Po tradiciji u Starog mornara, o točnom nadnevku i satu, naknadno.
 
-![](/img/logo200.png "Slika")
+![]( "Slika")
 
 Ma šta
