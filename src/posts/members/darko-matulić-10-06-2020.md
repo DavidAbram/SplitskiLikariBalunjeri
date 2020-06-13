@@ -3,5 +3,5 @@ templateKey: members
 title: Darko Matulić
 position: boardMember
 image:
-  src: /img/5.png
+  src: /img/darko-matulić-5.png
 ---
