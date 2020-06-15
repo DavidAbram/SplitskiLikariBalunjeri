@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { StaticQuery, graphql } from 'gatsby';
 import PreviewCompatibleImage from '../PreviewCompatibleImage';
-import { colors, font, device } from '../styles';
+import { colors, font } from '../styles';
 
 export const titles = {
   president: "Predsjednik Udruge",
@@ -11,6 +11,15 @@ export const titles = {
   member: "Članovi Udruge",
   liquidator: "Likvidator Udruge",
 }
+
+// To determine which page shows what
+const membersOnlyTitles = { member: titles.member };
+const withoutMembersTitles =  {
+  president: titles.president,
+  secretary: titles.secretary,
+  boardMember: titles.boardMember,
+  liquidator: titles.liquidator
+};
 
 const StyledMemberWrapper = styled.div`
   display: flex;
@@ -50,30 +59,34 @@ const StyledH2 = styled.h2`
   border-bottom: 3px solid ${colors.primaryDark};
 `;
 
-export const Members = ({ members, title }) => {
+export const Members = ({ members, title, showMembersOnly = false }) => {
   let previousMemberCount = 0;
+  const displayValues = showMembersOnly ? membersOnlyTitles : withoutMembersTitles;
   return (
     <div>
       <StyledH2 style={{ maxWidth: '400px' }}>
         { title || "Članovi"}
       </StyledH2>
       {
-        Object.values(titles).map((title, index) => {
+        Object.values(displayValues).map((title, index) => {
             if (index !== 0){
-              previousMemberCount += members.filter(member => member.position === Object.keys(titles)[index - 1]).length;
+              previousMemberCount += members.filter(member => member.position === Object.keys(displayValues)[index - 1]).length;
             }
             console.log(previousMemberCount)
             if (members
               .filter(
-                member => member.position === Object.keys(titles)[index]
+                member => member.position === Object.keys(displayValues)[index]
               ).length === 0) return null;
           return (
             <React.Fragment key={title}>
-              <h3 style={{ maxWidth: '400px', margin: '40px auto 5px auto' }} >{title}</h3>
+              {
+                !showMembersOnly &&
+                <h3 style={{ maxWidth: '400px', margin: '40px auto 5px auto' }} >{title}</h3>
+              }
               {
                 members
                   .filter(
-                    member => member.position === Object.keys(titles)[index]
+                    member => member.position === Object.keys(displayValues)[index]
                   )
                   .map(
                     (member, memberIndex) => (
@@ -95,7 +108,7 @@ export const Members = ({ members, title }) => {
 };
 
 
-const MembersWithQuery = ({title}) => (
+const MembersWithQuery = ({title , showMembersOnly}) => (
   <StaticQuery
     query={graphql`
       query {
@@ -118,7 +131,7 @@ const MembersWithQuery = ({title}) => (
         }
       }
     `}
-    render={data => (<Members title={title} members={
+    render={data => (<Members showMembersOnly={showMembersOnly} title={title} members={
       data.allMarkdownRemark.nodes.map(node =>
         ({
           name: node.frontmatter.title,

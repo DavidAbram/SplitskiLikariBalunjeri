@@ -77,7 +77,7 @@ export const MembersPageTemplate = ({
         <PageContent>{content}</PageContent>
       </LeftSideDiv>
       <StyledDiv>
-        <Members title={membersTitle}/>
+        <Members showMembersOnly={true} title={membersTitle}/>
       </StyledDiv>
     </StyledWrapper>
   );

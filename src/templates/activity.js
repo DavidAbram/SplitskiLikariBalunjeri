@@ -29,7 +29,7 @@ ActivitiesTemplate.propTypes = {
 };
 
 const Activities = ({ data }) => {
-  const { frontmatter, html, fields } = data.markdownRemark;
+  const { frontmatter, html } = data.markdownRemark;
   return (
     <Layout>
       <ActivitiesTemplate

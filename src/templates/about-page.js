@@ -95,6 +95,7 @@ const AboutPage = ({ data }) => {
         content={html}
         PageContent={HTMLContent}
         membersTitle={frontmatter.membersTitle}
+        showMembersOnly={false}
       />
     </Layout>
   );
