@@ -4,7 +4,7 @@ import { Image } from '../../components/Gallery';
 
 const ImagesGalleryPreview = ({ entry }) => {
   const data = entry.getIn(['data']).toJS();
-  if (data) {
+  if (data && data.image) {
     return <Image image={data.image} name={data.title} />;
   } else {
     return <div>Loading...</div>;
