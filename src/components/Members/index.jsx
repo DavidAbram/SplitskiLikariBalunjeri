@@ -72,7 +72,6 @@ export const Members = ({ members, title, showMembersOnly = false }) => {
             if (index !== 0){
               previousMemberCount += members.filter(member => member.position === Object.keys(displayValues)[index - 1]).length;
             }
-            console.log(previousMemberCount)
             if (members
               .filter(
                 member => member.position === Object.keys(displayValues)[index]
@@ -112,7 +111,7 @@ const MembersWithQuery = ({title , showMembersOnly}) => (
   <StaticQuery
     query={graphql`
       query {
-        allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "members"}}}) {
+        allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "members"}}}, sort: {fields: frontmatter___title}) {
           nodes {
             frontmatter {
               title
